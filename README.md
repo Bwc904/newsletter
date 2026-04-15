@@ -55,7 +55,7 @@ https://claude.ai/code/routines → **New routine**:
 - **Environment secrets:**
   - `XAI_API_KEY` = your Grok key from https://console.x.ai
   - `NEWSLETTER_TO` = `Ben@eChapps.com`
-  - `NEWSLETTER_SITE_URL` = your GitHub Pages URL (e.g. `https://bwc90.github.io/daily-brief`)
+  - `NEWSLETTER_SITE_URL` = your GitHub Pages URL (e.g. `https://bwc904.github.io/newsletter`)
 - **Connectors:** Gmail
 - **Trigger:** Scheduled · Daily · 07:00 local
 - **Prompt:** paste contents of `routine-prompt.md`

@@ -41,7 +41,7 @@ def read_site_url() -> str:
     if url:
         return url
     # Fallback — user fills this in README after enabling GitHub Pages.
-    return "https://YOUR-USER.github.io/daily-brief"
+    return "https://bwc904.github.io/newsletter"
 
 
 def publish() -> str:
