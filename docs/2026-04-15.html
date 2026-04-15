@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="supported-color-schemes" content="dark only">
+<title>Daily Brief · 2026-04-15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#09090b; color:#e4e4e7; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(34,211,238,0.10),transparent),radial-gradient(ellipse 900px 600px at 90% 15%,rgba(245,158,11,0.08),transparent),radial-gradient(ellipse 800px 500px at 50% 100%,rgba(167,139,250,0.10),transparent); background-attachment:fixed; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 20px; }
+  .serif { font-family:'Instrument Serif','Iowan Old Style','Palatino',Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  .kicker { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:600; font-family:'Space Grotesk',sans-serif; }
+  .masthead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid #27272a; margin-bottom:22px; }
+  .masthead h1 { margin:0; font-size:46px; line-height:1; font-weight:400; letter-spacing:-0.02em; color:#fafafa; font-family:'Instrument Serif',Georgia,serif; }
+  .masthead h1 em { font-style:italic; color:#e4e4e7; }
+  .masthead .date { font-size:13px; color:#a1a1aa; }
+  .tldr { position:relative; background:rgba(24,24,27,0.55); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 20px; margin-bottom:28px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.35); overflow:hidden; }
+  .tldr::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(245,158,11,0.04) 45%,rgba(167,139,250,0.08)); pointer-events:none; }
+  .tldr > * { position:relative; }
+  .tldr .tldr-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:700; margin-bottom:10px; display:block; }
+  .tldr ul { margin:0; padding:0; list-style:none; }
+  .tldr li { padding:8px 0; border-bottom:1px solid #27272a; display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#e4e4e7; line-height:1.45; }
+  .tldr li:last-child { border-bottom:none; }
+  .tldr .t-dot { width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .tldr .t-col { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-right:8px; }
+  .hero { background:rgba(24,24,27,0.5); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:32px; margin-bottom:32px; position:relative; overflow:hidden; backdrop-filter:blur(24px) saturate(160%); -webkit-backdrop-filter:blur(24px) saturate(160%); box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px rgba(0,0,0,0.45); }
+  .hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22d3ee,#f59e0b,#a78bfa); z-index:2; }
+  .hero::after { content:''; position:absolute; inset:-40%; background:radial-gradient(circle at 20% 10%,rgba(34,211,238,0.18),transparent 45%),radial-gradient(circle at 85% 20%,rgba(245,158,11,0.14),transparent 40%),radial-gradient(circle at 60% 100%,rgba(167,139,250,0.16),transparent 45%); pointer-events:none; filter:blur(20px); z-index:0; }
+  .hero > * { position:relative; z-index:1; }
+  .hero .tag { display:inline-block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:999px; background:#27272a; color:#fafafa; margin-bottom:14px; }
+  .hero h2 { margin:0 0 12px 0; font-size:34px; font-weight:400; line-height:1.15; color:#fafafa; letter-spacing:-0.015em; font-family:'Instrument Serif',Georgia,serif; }
+  .hero .meta { font-size:13px; color:#a1a1aa; margin-bottom:16px; }
+  .hero .body { font-size:15px; line-height:1.6; color:#d4d4d8; margin-bottom:20px; }
+  .hero .cta { display:inline-block; padding:10px 20px; background:#fafafa; color:#09090b !important; font-weight:600; font-size:13px; border-radius:8px; }
+  .cols { display:table; width:100%; border-spacing:16px 0; margin-left:-16px; }
+  .col { display:table-cell; width:33.3%; vertical-align:top; }
+  @media only screen and (max-width:700px) { .cols { display:block; margin-left:0; } .col { display:block; width:100%; padding-bottom:16px; } .masthead h1 { font-size:26px; } .hero h2 { font-size:22px; } }
+  .col-head { display:flex; align-items:center; gap:10px; padding:14px 16px; background:#18181b; border:1px solid #27272a; border-radius:12px; margin-bottom:12px; }
+  .col-dot { width:8px; height:8px; border-radius:50%; }
+  .col-name { font-size:14px; font-weight:700; color:#fafafa; letter-spacing:-0.01em; }
+  .col-body { background:transparent; border:none; padding:10px 0 0 0; }
+  .card { padding:18px 18px 16px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; }
+  .card:last-child { margin-bottom:0; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .sig { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; background:#27272a; color:#fafafa; letter-spacing:0.04em; white-space:nowrap; text-transform:uppercase; }
+  .card .headline { margin:0 0 8px 0; font-size:15px; line-height:1.35; font-weight:700; color:#fafafa; letter-spacing:-0.01em; font-family:'Space Grotesk',sans-serif; }
+  .card .post-body { margin:0 0 10px 0; font-size:13px; line-height:1.5; color:#a1a1aa; border-left:2px solid #27272a; padding-left:10px; }
+  .card .author { font-size:12px; color:#a1a1aa; margin-bottom:8px; }
+  .card .author strong { color:#fafafa; font-weight:600; }
+  .card .author .handle { color:#71717a; }
+  .card .engage { display:flex; align-items:center; gap:10px; font-size:11.5px; color:#a1a1aa; }
+  .card .why { margin-top:10px; padding:10px 12px; background:#09090b; border-left:3px solid currentColor; font-size:12.5px; color:#d4d4d8; line-height:1.55; border-radius:4px; }
+  .card .why strong { color:#fafafa; }
+  .card a.link { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+  .news-card { padding:14px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; display:block; }
+  .news-card:last-child { margin-bottom:0; }
+  .news-card .t { font-size:14px; font-weight:700; color:#fafafa; line-height:1.35; margin-bottom:4px; letter-spacing:-0.005em; font-family:'Space Grotesk',sans-serif; }
+  .news-card .s { font-size:11px; color:#71717a; }
+  .news-card .sum { font-size:12.5px; color:#a1a1aa; margin-top:6px; line-height:1.5; }
+  .section-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#71717a; font-weight:700; padding:14px 18px 6px 18px; }
+  .commentary { font-size:13px; color:#d4d4d8; font-style:italic; padding:14px 18px; line-height:1.55; border-bottom:1px solid #1f1f22; background:#0c0c0e; }
+  .footer { margin-top:36px; padding-top:20px; border-top:1px solid #27272a; text-align:center; font-size:11px; color:#52525b; }
+  .footer a { color:#71717a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>The <em>morning</em> edition</h1>
+    </div>
+    <div class="date">2026-04-15</div>
+  </div>
+
+  
+  <div class="tldr">
+    <span class="tldr-label">Today in 30 seconds</span>
+    <ul>
+      
+      <li>
+        <span class="t-dot" style="background:#22d3ee;"></span>
+        <div><span class="t-col" style="color:#22d3ee;">AI</span>Tesla AI5 chip taped out; AI6 and Dojo3 in development.</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#f59e0b;"></span>
+        <div><span class="t-col" style="color:#f59e0b;">Ecommerce & Amazon</span>Autoresearch isn't just for training models (2026)</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#a78bfa;"></span>
+        <div><span class="t-col" style="color:#a78bfa;">Business & World</span>YC funds Totalis with $500K in USDC on Solana, first stablecoin deal.</div>
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  <div class="hero">
+    <span class="tag" style="background:#22d3ee;color:#09090b;">⭐ Top story · AI</span>
+    
+      <h2>Claude Code introduces scheduled/event-driven routines for autonomous execution.</h2>
+      <div class="meta"><strong style="color:#fafafa;">Claude</strong> <span style="color:#71717a;">@@claudeai</span> · 1.0M followers · 1d ago · ❤ 17.1K · 🔁 1.4K · 💬 700</div>
+      <div class="body">Now in research preview: routines in Claude Code. Configure a routine once (a prompt, a repo, and your connectors), and it can run on a schedule, from an API call, or in response to an event.</div>
+      <div class="body" style="color:#a1a1aa;"><strong style="color:#fafafa;">Why it matters:</strong> Enables persistent, infrastructure-hosted AI agent workflows without local machines.</div>
+      <a class="cta" href="https://x.com/claudeai/status/2044095086460309790">Open on X →</a>
+    
+  </div>
+  
+
+  <table class="cols" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #22d3ee;">
+        <span class="col-dot" style="background:#22d3ee;"></span>
+        <span class="col-name">AI</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Claude Code's routines and multi-session upgrades signal agentic AI's shift to autonomous infrastructure—while Tesla's AI5 tape-out and Anthropic's vuln-hunting keep the hardware/security arms race blistering.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Claude Code desktop redesign enables multiple sessions side-by-side with sidebar management.</h3>
+          
+          <div class="post-body">We've redesigned Claude Code on desktop. You can now run multiple Claude sessions side by side from one window, with a new sidebar to manage them all.</div>
+          
+          <div class="author"><strong>Claude</strong> <span class="handle">@@claudeai · 1.0M followers · 1d ago</span></div>
+          <div class="engage">❤ 38.3K · 🔁 2.9K · 💬 1.9K</div>
+          <div class="why"><strong>Why:</strong> Advances multi-agent workflows for developers using Claude.</div>
+          <a class="link" href="https://x.com/claudeai/status/2044131493966909862" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Tesla AI5 chip taped out; AI6 and Dojo3 in development.</h3>
+          
+          <div class="post-body">Congrats to the @Tesla_AI chip design team on taping out AI5! AI6, Dojo3 & other exciting chips in work.</div>
+          
+          <div class="author"><strong>Elon Musk</strong> <span class="handle">@@elonmusk · 200.0M followers · 12h ago</span></div>
+          <div class="engage">❤ 82.0K · 🔁 8.0K · 💬 5.2K</div>
+          <div class="why"><strong>Why:</strong> Key hardware advancement for frontier AI training at Tesla.</div>
+          <a class="link" href="https://x.com/elonmusk/status/2044315118583066738" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Details Claude Code routines for event-driven, autonomous engineering workflows.</h3>
+          
+          <div class="post-body">Holy shit...Claude just turned into an autonomous engineer. Not a chatbot. Not a copilot. An execution system that runs without you. This is wild 👇 You can now create “routines” in Claude Code...</div>
+          
+          <div class="author"><strong>Nainsi Dwivedi</strong> <span class="handle">@@NainsiDwiv50980 · 5.0K followers · 23h ago</span></div>
+          <div class="engage">❤ 12 · 🔁 0 · 💬 2</div>
+          <div class="why"><strong>Why:</strong> Builder demo of novel agent automation reducing human oversight.</div>
+          <a class="link" href="https://x.com/NainsiDwiv50980/status/2044147477201432934" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Leaked Claude Code template with CLAUDE.md for self-training AI infrastructure.</h3>
+          
+          <div class="post-body">Holy shit. Someone just leaked the Claude Code project template teams are quietly using. This isn't prompting anymore. This is AI engineering infrastructure. ⚡</div>
+          
+          <div class="author"><strong>Swadesh Kumar</strong> <span class="handle">@@swadeshkumar_ · 20.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 385 · 🔁 63 · 💬 27</div>
+          <div class="why"><strong>Why:</strong> Novel tool technique for repo-aware, persistent AI engineering.</div>
+          <a class="link" href="https://x.com/swadeshkumar_/status/2044064197840122038" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.aboutamazon.com/news/aws/aws-amazon-bio-discovery-ai-drug-research" style="display:block;">
+          <div class="t">AWS launches Amazon Bio Discovery to accelerate AI-powered research in life sciences</div>
+          <div class="s">AboutAmazon · 1d ago</div>
+          <div class="sum">New agentic AI app speeds drug design with specialized models and no-code workflows.</div>
+        </a>
+        
+        <a class="news-card" href="http://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers" style="display:block;">
+          <div class="t">NVIDIA Launches Ising, the World’s First Open AI Models to Accelerate the Path to Useful Quantum Computers</div>
+          <div class="s">NVIDIA Newsroom · 1d ago</div>
+          <div class="sum">Open-source quantum AI models improve processor calibration and error correction.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.anthropic.com/glasswing" style="display:block;">
+          <div class="t">Project Glasswing: Securing critical software for the AI era</div>
+          <div class="s">Anthropic · 3h ago</div>
+          <div class="sum">Claude Mythos 2 finds thousands of zero-days; initiative to secure software vs. AI threats.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #f59e0b;">
+        <span class="col-dot" style="background:#f59e0b;"></span>
+        <span class="col-name">Ecommerce & Amazon</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Slim pickings on X today—DTC math is brutal, but Shopify's Autoresearch drop could automate your way out of the AOV trap.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Shopify seller frustrated with repeat chargeback after issuing refund.</h3>
+          
+          <div class="post-body">someone from @Shopify help. i already gave this dude a refund and now he’s charging back again?? this is ridiculous and straight fraud. How is this even possible. @Shopify</div>
+          
+          <div class="author"><strong>Delaney</strong> <span class="handle">@@delkickz · 10.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 4.5K · 🔁 65 · 💬 96</div>
+          <div class="why"><strong>Why:</strong> Highlights chargeback fraud risks and Shopify merchant support issues.</div>
+          <a class="link" href="https://x.com/delkickz/status/2043972269844689108" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Artist critiques high D2C platform fees vs cheaper Shopify alternative.</h3>
+          
+          <div class="post-body">this isn’t a gotcha... paying 20% on all revenue for y’all to host an artists work... direct to consumer means no middleman. y’all are the middleman... Shopify is like $39/mo + 3% per sale.</div>
+          
+          <div class="author"><strong>RUSS</strong> <span class="handle">@@russdiemon · 50.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 1.4K · 🔁 175 · 💬 59</div>
+          <div class="why"><strong>Why:</strong> Sparks debate on DTC platform costs vs self-hosted Shopify for creators.</div>
+          <a class="link" href="https://x.com/russdiemon/status/2044140308456173774" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">DTC expert warns low AOV and high CAC eroding brand profits in 2026.</h3>
+          
+          <div class="post-body">The $28 AOV trap is killing DTC brands in 2026. CAC is up 222% in 8 years. The average brand LOSES $29 per new customer. Only 28% of first-time buyers ever return. "More conversions" isn't the answer anymore. Here's what is 🧵</div>
+          
+          <div class="author"><strong>Goldi Kambale | Shopify CRO</strong> <span class="handle">@@Goldikam · 5.0K followers · 3h ago</span></div>
+          <div class="engage">❤ 3 · 🔁 0 · 💬 2</div>
+          <div class="why"><strong>Why:</strong> Reveals critical DTC economics; thread likely shares retention tactics.</div>
+          <a class="link" href="https://x.com/Goldikam/status/2044460827940430042" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Indie dev shares playbook for cloning successful niche Shopify apps.</h3>
+          
+          <div class="post-body">I'm locking in again. Found a good niche Shopify app that has tons of traction. Taking on the build again... Find good performing apps make a basic MVP good listing check for organic downloads...</div>
+          
+          <div class="author"><strong>Daniel</strong> <span class="handle">@@itsdevdaniel · 1.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 3 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Practical tactic for building viral Shopify apps via competitor analysis.</div>
+          <a class="link" href="https://x.com/itsdevdaniel/status/2043866288599060872" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Shopify's Shop App touted as untapped ecommerce growth channel.</h3>
+          
+          <div class="post-body">The Shop App might be one of the most overlooked growth channels in ecommerce right now. Most brands haven’t optimized for it yet... early-mover advantage...</div>
+          
+          <div class="author"><strong>Zipify Apps</strong> <span class="handle">@@zipifyapps · 20.0K followers · 22h ago</span></div>
+          <div class="engage">❤ 1 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Urges early optimization for Shopify's pushed platform amid low adoption.</div>
+          <a class="link" href="https://x.com/zipifyapps/status/2044162021407486196" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://shopify.engineering/autoresearch" style="display:block;">
+          <div class="t">Autoresearch isn't just for training models (2026)</div>
+          <div class="s">Shopify Engineering · 2h ago</div>
+          <div class="sum">Shopify open-sources Autoresearch tool improving 40+ metrics beyond AI training.</div>
+        </a>
+        
+        <a class="news-card" href="https://techfundingnews.com/neato-25m-2p-commerce-funding" style="display:block;">
+          <div class="t">Neato raises $25M from Advantage Capital to expand 2P eCommerce model beyond Amazon</div>
+          <div class="s">Tech Funding News · 1d ago</div>
+          <div class="sum">$25M funding for Neato's 2P commerce expanding past Amazon marketplaces.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.valueaddedresource.net/amazon-fuel-surcharge-credit-card-ad-fees/" style="display:block;">
+          <div class="t">Amazon Sellers Face Cash Crunch As Fuel Charges, Loss Of Credit Card Option For Ad Fees Erode Margins</div>
+          <div class="s">Value Added Resource · 1d ago</div>
+          <div class="sum">Amazon FBA sellers hit by fuel surcharges and ad fee payment changes squeezing margins.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #a78bfa;">
+        <span class="col-dot" style="background:#a78bfa;"></span>
+        <span class="col-name">Business & World</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">YC dips into stablecoins while FTC cracks ad collusion; bootstrappers grind past plateaus as tariffs loom—fund math never sleeps.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">YC funds Totalis with $500K in USDC on Solana, first stablecoin deal.</h3>
+          
+          <div class="post-body">TODAY: Y Combinator makes history by funding startup Totalis with $500K entirely in $USDC, marking its first stablecoin funding settled on Solana.</div>
+          
+          <div class="author"><strong>Cointelegraph</strong> <span class="handle">@@Cointelegraph · 1.5M followers · 1d ago</span></div>
+          <div class="engage">❤ 615 · 🔁 109 · 💬 61</div>
+          <div class="why"><strong>Why:</strong> Signals shift in startup funding to crypto/stablecoins by top accelerator.</div>
+          <a class="link" href="https://x.com/Cointelegraph/status/2043942350662074577" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Caterpillar acquires agtech startup Monarch, electric self-driving tractors.</h3>
+          
+          <div class="post-body">BREAKING: Caterpillar Inc. acquires self-driving electric tractor startup Monarch — dubbed the "Tesla of agriculture"</div>
+          
+          <div class="author"><strong>Polymarket</strong> <span class="handle">@@Polymarket · 1.0M followers · 1d ago</span></div>
+          <div class="engage">❤ 5.7K · 🔁 491 · 💬 94</div>
+          <div class="why"><strong>Why:</strong> Major corp buyout highlights agtech consolidation and EV push.</div>
+          <a class="link" href="https://x.com/Polymarket/status/2044142590392426962" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Founder shares bootstrapped path to $4.3M ARR via plateaus and breakthroughs.</h3>
+          
+          <div class="post-body">Here's what nobody tells you about going from $0 to $4.3M ARR. It's not a growth curve. It's a series of plateaus interrupted by breakthroughs.</div>
+          
+          <div class="author"><strong>Kyle Bigley</strong> <span class="handle">@@kylebigley · 5.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 13 · 🔁 0 · 💬 2</div>
+          <div class="why"><strong>Why:</strong> Real founder tactics on scaling without VC funding.</div>
+          <a class="link" href="https://x.com/kylebigley/status/2044038597024645161" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Bootstrapped founder on constraints forcing focus over VC optionality.</h3>
+          
+          <div class="post-body">The weirdest part of having no funding: You're forced to focus. Funded founders have optionality... Bootstrapping is reality from day 1.</div>
+          
+          <div class="author"><strong>Eric Djavid</strong> <span class="handle">@@ericdjav · 10.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 6 · 🔁 1 · 💬 3</div>
+          <div class="why"><strong>Why:</strong> Key operator lesson: constraints build better founders faster.</div>
+          <a class="link" href="https://x.com/ericdjav/status/2044113536956174802" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">VC insider: $1M ARR now seed baseline due to fund math shifts.</h3>
+          
+          <div class="post-body">Raising capital is about Fund Math... $1M ARR is the new baseline for a Seed round.</div>
+          
+          <div class="author"><strong>Gabriel Jarrosson</strong> <span class="handle">@@GJarrosson · 2.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 2 · 🔁 1 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Explains tough fundraising for non-AI startups.</div>
+          <a class="link" href="https://x.com/GJarrosson/status/2044099025452847386" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.ftc.gov/news-events/news/press-releases/2026/04/ftc-testifies-senate-commerce-science-transportation-committee" style="display:block;">
+          <div class="t">FTC Testifies Before Senate Commerce, Science and Transportation Committee</div>
+          <div class="s">FTC.gov · 2h ago</div>
+          <div class="sum">FTC Chair highlights antitrust accomplishments and priorities.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.ftc.gov/news-events/news/press-releases/2026/04/ftc-takes-action-restore-competition-digital-advertising-ecosystem" style="display:block;">
+          <div class="t">FTC Takes Action to Restore Competition in the Digital Advertising Ecosystem</div>
+          <div class="s">FTC.gov · 2h ago</div>
+          <div class="sum">Ad agencies settle collusion charges on brand safety standards.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.usatoday.com/story/news/politics/2026/04/15/trump-tariffs-fight-after-supreme-court-ruling/89609279007" style="display:block;">
+          <div class="t">Trump tariff fight isn't over. These businesses are still fighting</div>
+          <div class="s">USAToday · 12h ago</div>
+          <div class="sum">USTR probes new tariffs on imports amid unfair trade practices.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    </tr>
+  </table>
+
+  <div class="footer">
+    Generated 2026-04-15T18:39:34.671135+00:00 · Powered by Claude Code Routines + Grok API · 71.6K tokens
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="supported-color-schemes" content="dark only">
+<title>Daily Brief · {{ date }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#09090b; color:#e4e4e7; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(34,211,238,0.10),transparent),radial-gradient(ellipse 900px 600px at 90% 15%,rgba(245,158,11,0.08),transparent),radial-gradient(ellipse 800px 500px at 50% 100%,rgba(167,139,250,0.10),transparent); background-attachment:fixed; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 20px; }
+  .serif { font-family:'Instrument Serif','Iowan Old Style','Palatino',Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  .kicker { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:600; font-family:'Space Grotesk',sans-serif; }
+  .masthead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid #27272a; margin-bottom:22px; }
+  .masthead h1 { margin:0; font-size:46px; line-height:1; font-weight:400; letter-spacing:-0.02em; color:#fafafa; font-family:'Instrument Serif',Georgia,serif; }
+  .masthead h1 em { font-style:italic; color:#e4e4e7; }
+  .masthead .date { font-size:13px; color:#a1a1aa; }
+  .tldr { position:relative; background:rgba(24,24,27,0.55); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 20px; margin-bottom:28px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.35); overflow:hidden; }
+  .tldr::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(245,158,11,0.04) 45%,rgba(167,139,250,0.08)); pointer-events:none; }
+  .tldr > * { position:relative; }
+  .tldr .tldr-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:700; margin-bottom:10px; display:block; }
+  .tldr ul { margin:0; padding:0; list-style:none; }
+  .tldr li { padding:8px 0; border-bottom:1px solid #27272a; display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#e4e4e7; line-height:1.45; }
+  .tldr li:last-child { border-bottom:none; }
+  .tldr .t-dot { width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .tldr .t-col { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-right:8px; }
+  .hero { background:rgba(24,24,27,0.5); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:32px; margin-bottom:32px; position:relative; overflow:hidden; backdrop-filter:blur(24px) saturate(160%); -webkit-backdrop-filter:blur(24px) saturate(160%); box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px rgba(0,0,0,0.45); }
+  .hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22d3ee,#f59e0b,#a78bfa); z-index:2; }
+  .hero::after { content:''; position:absolute; inset:-40%; background:radial-gradient(circle at 20% 10%,rgba(34,211,238,0.18),transparent 45%),radial-gradient(circle at 85% 20%,rgba(245,158,11,0.14),transparent 40%),radial-gradient(circle at 60% 100%,rgba(167,139,250,0.16),transparent 45%); pointer-events:none; filter:blur(20px); z-index:0; }
+  .hero > * { position:relative; z-index:1; }
+  .hero .tag { display:inline-block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:999px; background:#27272a; color:#fafafa; margin-bottom:14px; }
+  .hero h2 { margin:0 0 12px 0; font-size:34px; font-weight:400; line-height:1.15; color:#fafafa; letter-spacing:-0.015em; font-family:'Instrument Serif',Georgia,serif; }
+  .hero .meta { font-size:13px; color:#a1a1aa; margin-bottom:16px; }
+  .hero .body { font-size:15px; line-height:1.6; color:#d4d4d8; margin-bottom:20px; }
+  .hero .cta { display:inline-block; padding:10px 20px; background:#fafafa; color:#09090b !important; font-weight:600; font-size:13px; border-radius:8px; }
+  .cols { display:table; width:100%; border-spacing:16px 0; margin-left:-16px; }
+  .col { display:table-cell; width:33.3%; vertical-align:top; }
+  @media only screen and (max-width:700px) { .cols { display:block; margin-left:0; } .col { display:block; width:100%; padding-bottom:16px; } .masthead h1 { font-size:26px; } .hero h2 { font-size:22px; } }
+  .col-head { display:flex; align-items:center; gap:10px; padding:14px 16px; background:#18181b; border:1px solid #27272a; border-radius:12px; margin-bottom:12px; }
+  .col-dot { width:8px; height:8px; border-radius:50%; }
+  .col-name { font-size:14px; font-weight:700; color:#fafafa; letter-spacing:-0.01em; }
+  .col-body { background:transparent; border:none; padding:10px 0 0 0; }
+  .card { padding:18px 18px 16px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; }
+  .card:last-child { margin-bottom:0; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .sig { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; background:#27272a; color:#fafafa; letter-spacing:0.04em; white-space:nowrap; text-transform:uppercase; }
+  .card .headline { margin:0 0 8px 0; font-size:15px; line-height:1.35; font-weight:700; color:#fafafa; letter-spacing:-0.01em; font-family:'Space Grotesk',sans-serif; }
+  .card .post-body { margin:0 0 10px 0; font-size:13px; line-height:1.5; color:#a1a1aa; border-left:2px solid #27272a; padding-left:10px; }
+  .card .author { font-size:12px; color:#a1a1aa; margin-bottom:8px; }
+  .card .author strong { color:#fafafa; font-weight:600; }
+  .card .author .handle { color:#71717a; }
+  .card .engage { display:flex; align-items:center; gap:10px; font-size:11.5px; color:#a1a1aa; }
+  .card .why { margin-top:10px; padding:10px 12px; background:#09090b; border-left:3px solid currentColor; font-size:12.5px; color:#d4d4d8; line-height:1.55; border-radius:4px; }
+  .card .why strong { color:#fafafa; }
+  .card a.link { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+  .news-card { padding:14px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; display:block; }
+  .news-card:last-child { margin-bottom:0; }
+  .news-card .t { font-size:14px; font-weight:700; color:#fafafa; line-height:1.35; margin-bottom:4px; letter-spacing:-0.005em; font-family:'Space Grotesk',sans-serif; }
+  .news-card .s { font-size:11px; color:#71717a; }
+  .news-card .sum { font-size:12.5px; color:#a1a1aa; margin-top:6px; line-height:1.5; }
+  .section-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#71717a; font-weight:700; padding:14px 18px 6px 18px; }
+  .commentary { font-size:13px; color:#d4d4d8; font-style:italic; padding:14px 18px; line-height:1.55; border-bottom:1px solid #1f1f22; background:#0c0c0e; }
+  .footer { margin-top:36px; padding-top:20px; border-top:1px solid #27272a; text-align:center; font-size:11px; color:#52525b; }
+  .footer a { color:#71717a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>The <em>morning</em> edition</h1>
+    </div>
+    <div class="date">{{ date }}</div>
+  </div>
+
+  {% if tldr %}
+  <div class="tldr">
+    <span class="tldr-label">Today in 30 seconds</span>
+    <ul>
+      {% for item in tldr %}
+      <li>
+        <span class="t-dot" style="background:{{ item.accent }};"></span>
+        <div><span class="t-col" style="color:{{ item.accent }};">{{ item.column }}</span>{{ item.text }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if hero %}
+  {% set h = hero.data %}
+  <div class="hero">
+    <span class="tag" style="background:{{ hero.accent }};color:#09090b;">⭐ Top story · {{ hero.column_name }}</span>
+    {% if hero.kind == 'post' %}
+      <h2>{{ h.summary or h.text[:140] }}</h2>
+      <div class="meta"><strong style="color:#fafafa;">{{ h.author }}</strong> <span style="color:#71717a;">@{{ h.handle }}</span>{% if h.follower_count %} · {{ h.follower_count|fmt_int }} followers{% endif %}{% if h.timestamp %} · {{ h.timestamp|time_ago }}{% endif %} · ❤ {{ h.likes|fmt_int }} · 🔁 {{ h.retweets|fmt_int }} · 💬 {{ h.replies|fmt_int }}</div>
+      <div class="body">{{ h.text }}</div>
+      {% if h.why_it_matters %}<div class="body" style="color:#a1a1aa;"><strong style="color:#fafafa;">Why it matters:</strong> {{ h.why_it_matters }}</div>{% endif %}
+      <a class="cta" href="{{ h.post_url }}">Open on X →</a>
+    {% else %}
+      <h2>{{ h.title }}</h2>
+      <div class="meta"><strong style="color:#fafafa;">{{ h.source }}</strong>{% if h.published %} · {{ h.published|time_ago }}{% endif %}</div>
+      <div class="body">{{ h.summary }}</div>
+      <a class="cta" href="{{ h.url }}">Read full article →</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <table class="cols" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    {% for col in columns %}
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid {{ col.accent }};">
+        <span class="col-dot" style="background:{{ col.accent }};"></span>
+        <span class="col-name">{{ col.column }}</span>
+      </div>
+      <div class="col-body">
+
+        {% if col.commentary %}<div class="commentary">{{ col.commentary }}</div>{% endif %}
+
+        {% if col.x_posts %}
+        <div class="section-label">From X</div>
+        {% for post in col.x_posts %}
+        {% set sm = signal_meta.get(post.signal_type, {'emoji':'•','label':'Post'}) %}
+        <div class="card" style="color:{{ col.accent }};">
+          <div class="row">
+            <span class="sig" style="background:{{ col.accent }}22;color:{{ col.accent }};">{{ sm.emoji }} {{ sm.label }}</span>
+          </div>
+          <h3 class="headline">{{ post.summary or post.text[:110] }}</h3>
+          {% if post.text and post.summary and post.text != post.summary %}
+          <div class="post-body">{{ post.text }}</div>
+          {% endif %}
+          <div class="author"><strong>{{ post.author }}</strong> <span class="handle">@{{ post.handle }}{% if post.follower_count %} · {{ post.follower_count|fmt_int }} followers{% endif %}{% if post.timestamp %} · {{ post.timestamp|time_ago }}{% endif %}</span></div>
+          <div class="engage">❤ {{ post.likes|fmt_int }} · 🔁 {{ post.retweets|fmt_int }} · 💬 {{ post.replies|fmt_int }}</div>
+          {% if post.why_it_matters %}<div class="why"><strong>Why:</strong> {{ post.why_it_matters }}</div>{% endif %}
+          <a class="link" href="{{ post.post_url }}" style="color:{{ col.accent }};">Read full post on X →</a>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if col.news %}
+        <div class="section-label">News</div>
+        {% for article in col.news %}
+        <a class="news-card" href="{{ article.url }}" style="display:block;">
+          <div class="t">{{ article.title }}</div>
+          <div class="s">{{ article.source }}{% if article.published %} · {{ article.published|time_ago }}{% endif %}</div>
+          {% if article.summary %}<div class="sum">{{ article.summary }}</div>{% endif %}
+        </a>
+        {% endfor %}
+        {% endif %}
+
+      </div>
+    </td>
+    {% endfor %}
+    </tr>
+  </table>
+
+  <div class="footer">
+    Generated {{ generated_at }} · Powered by Claude Code Routines + Grok API{% if total_tokens %} · {{ total_tokens|fmt_int }} tokens{% endif %}
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+  "columns": [
+    {
+      "name": "AI",
+      "slug": "ai",
+      "accent": "#22d3ee",
+      "description": "Frontier AI models, research, agents, builder launches, novel prompt/tool techniques.",
+      "x_keywords": ["AI", "LLM", "agent", "Claude", "GPT", "Gemini", "open source model", "prompt engineering"],
+      "x_semantic_hints": [
+        "new AI tool just dropped",
+        "built with Claude Code",
+        "this prompt is wild",
+        "underrated AI use case",
+        "I shipped this agent",
+        "novel agent workflow"
+      ],
+      "news_query": "AI model releases, research breakthroughs, and product launches in the last 24 hours",
+      "exclude_handles": ["OpenAI", "AnthropicAI", "Google", "GoogleDeepMind", "xai", "MetaAI", "TechCrunch", "verge", "WIRED", "arstechnica"]
+    },
+    {
+      "name": "Ecommerce & Amazon",
+      "slug": "ecom",
+      "accent": "#f59e0b",
+      "description": "DTC, Shopify, Amazon FBA seller ecosystem — policies, fees, tools, and operator tactics.",
+      "x_keywords": ["ecommerce", "DTC", "Shopify", "conversion rate", "Meta ads", "TikTok shop", "Amazon FBA", "Seller Central", "PPC", "ASIN", "private label"],
+      "x_semantic_hints": [
+        "this ecommerce tactic is working",
+        "small brand growing fast",
+        "new Shopify app",
+        "underrated DTC playbook",
+        "new Amazon policy",
+        "FBA fee change",
+        "ranking tactic that works",
+        "I launched this ASIN"
+      ],
+      "news_query": "ecommerce, DTC, Shopify, and Amazon seller marketplace news in the last 24 hours",
+      "exclude_handles": ["Shopify", "Meta", "TikTok", "amazon", "AmazonSellers", "JungleScout", "Helium_10", "RetailDive", "Modern_Retail"]
+    },
+    {
+      "name": "Business & World",
+      "slug": "biz",
+      "accent": "#a78bfa",
+      "description": "Startup funding, founder operator tactics, plus world/policy events with real business impact (regulation, tariffs, antitrust, trade).",
+      "x_keywords": ["startup", "founder", "Series A", "seed round", "YC", "bootstrap", "product launch", "tariffs", "regulation", "AI act", "antitrust", "FTC", "trade policy"],
+      "x_semantic_hints": [
+        "bootstrapped to",
+        "founder lesson",
+        "hit $1M ARR",
+        "building in public",
+        "raised a round",
+        "new tariff affecting imports",
+        "AI regulation bill",
+        "antitrust ruling"
+      ],
+      "news_query": "startup funding, founder stories, and regulatory/trade/antitrust news with business impact in the last 24 hours",
+      "exclude_handles": ["ycombinator", "TechCrunch", "Forbes", "BusinessInsider", "Bloomberg", "WSJ", "CNN", "FoxNews", "nytimes", "WashingtonPost", "Reuters", "AP"]
+    }
+  ],
+  "selection_rules": {
+    "final_posts_per_column": 5,
+    "mainstream_slots_pct": 40,
+    "hidden_gem_slots_pct": 60,
+    "min_small_account_posts": 2,
+    "small_account_follower_cutoff": 50000,
+    "mainstream_min_faves": 500,
+    "time_window_hours": 24,
+    "news_articles_per_column": 3,
+    "max_tool_calls_per_column": 3,
+    "virality_formula": "(likes + 3*replies + 2*retweets) / max(follower_count, 1000)",
+    "exclude_categories": [
+      "entertainment / celebrity gossip",
+      "music festivals (Coachella, etc.)",
+      "award shows / red carpet",
+      "sports (unless directly about business/tech)",
+      "pure partisan outrage with no business impact",
+      "crypto shilling / meme coins",
+      "astrology / horoscopes",
+      "lifestyle / fashion"
+    ]
+  }
+}

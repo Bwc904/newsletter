@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+newsletter.json
+newsletter.html
+email.html
+.venv/
+venv/
