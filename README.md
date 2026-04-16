@@ -15,7 +15,7 @@ Routine (cloud, daily 7am)
   ├─ python render.py               # → newsletter.html (full dark-mode design)
   ├─ python publish.py              # → docs/YYYY-MM-DD.html + docs/index.html + email.html
   ├─ git commit + push              # GitHub Pages picks up the new edition
-  └─ Gmail MCP sends email.html     # minimal inbox preview w/ "Read full brief →" button
+  └─ python send_email.py           # sends via Resend API → Gmail inbox
 ```
 
 Quality: Grok's two-bucket algorithm enforces ≥2 of 5 posts per column from accounts with <50k followers. Excludes mega-account news handles + entertainment/celebrity/sports/crypto-shill categories.
@@ -43,9 +43,11 @@ Open `newsletter.html` in a browser for the full version, or `email.html` to pre
 3. In the repo: **Settings → Pages** → Source: `Deploy from a branch` → Branch: `main` / folder: `/docs` → Save.
 4. Note your public URL (shown on the Pages settings page) — looks like `https://<user>.github.io/daily-brief/`.
 
-### 2. Connect Gmail
+### 2. Sign up for Resend
 
-https://claude.ai/settings/connectors → connect Gmail.
+1. https://resend.com → Sign up **with `Ben@eChapps.com`** (important — the sandbox sender can only deliver to this address).
+2. https://resend.com/api-keys → Create API key (name it "Daily Brief").
+3. Free tier: 100 emails/day, 3,000/month — plenty.
 
 ### 3. Create the routine
 
@@ -55,8 +57,9 @@ https://claude.ai/code/routines → **New routine**:
 - **Environment secrets:**
   - `XAI_API_KEY` = your Grok key from https://console.x.ai
   - `NEWSLETTER_TO` = `Ben@eChapps.com`
-  - `NEWSLETTER_SITE_URL` = your GitHub Pages URL (e.g. `https://bwc904.github.io/newsletter`)
-- **Connectors:** Gmail
+  - `NEWSLETTER_SITE_URL` = `https://bwc904.github.io/newsletter`
+  - `RESEND_API_KEY` = your Resend key from step 2
+- **Connectors:** none required
 - **Trigger:** Scheduled · Daily · 07:00 local
 - **Prompt:** paste contents of `routine-prompt.md`
 
