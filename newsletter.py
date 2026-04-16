@@ -21,12 +21,19 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-# If the sandbox's proxy uses a custom CA bundle (common in corp / Claude
-# Code cloud envs), honor REQUESTS_CA_BUNDLE / SSL_CERT_FILE by pointing
-# grpc at the same bundle. Must be set BEFORE importing xai_sdk.
+# Must be set BEFORE importing xai_sdk (which pulls in grpc).
+#
+# 1. If the sandbox's proxy uses a custom CA bundle (common in corp / Claude
+#    Code cloud envs), honor REQUESTS_CA_BUNDLE / SSL_CERT_FILE by pointing
+#    grpc at the same bundle.
 _ca = os.environ.get("REQUESTS_CA_BUNDLE") or os.environ.get("SSL_CERT_FILE")
 if _ca and not os.environ.get("GRPC_DEFAULT_SSL_ROOTS_FILE_PATH"):
     os.environ["GRPC_DEFAULT_SSL_ROOTS_FILE_PATH"] = _ca
+
+# 2. Force grpc to use the OS's native DNS resolver (getaddrinfo) instead of
+#    c-ares. c-ares hits "DNS cache overflow" errors in sandboxed environments
+#    where background DNS traffic is blocked / throttled.
+os.environ.setdefault("GRPC_DNS_RESOLVER", "native")
 
 from xai_sdk import Client
 from xai_sdk.chat import system, user
