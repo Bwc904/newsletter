@@ -20,6 +20,14 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from dotenv import load_dotenv
+
+# If the sandbox's proxy uses a custom CA bundle (common in corp / Claude
+# Code cloud envs), honor REQUESTS_CA_BUNDLE / SSL_CERT_FILE by pointing
+# grpc at the same bundle. Must be set BEFORE importing xai_sdk.
+_ca = os.environ.get("REQUESTS_CA_BUNDLE") or os.environ.get("SSL_CERT_FILE")
+if _ca and not os.environ.get("GRPC_DEFAULT_SSL_ROOTS_FILE_PATH"):
+    os.environ["GRPC_DEFAULT_SSL_ROOTS_FILE_PATH"] = _ca
+
 from xai_sdk import Client
 from xai_sdk.chat import system, user
 from xai_sdk.tools import web_search, x_search
