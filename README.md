@@ -94,3 +94,7 @@ Hit **Run now**. Within ~60 seconds you should:
 ## Expected cost
 
 ~$0.10–0.15 per run × 30 days = **~$3–5/month** for daily delivery.
+
+## Want to build your own?
+
+Full step-by-step guide: [`BUILD-YOUR-OWN.md`](./BUILD-YOUR-OWN.md) — covers every account to create, every file to write, the content curation algorithm, the routine config, and the complete debugging runbook. Share it with anyone who wants their own daily brief.
