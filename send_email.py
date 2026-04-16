@@ -7,7 +7,7 @@ Env vars:
   NEWSLETTER_FROM   optional — defaults to "Daily Brief <onboarding@resend.dev>"
                     (Resend's sandbox sender; only delivers to the Resend
                      account owner's email. Replace with a verified-domain
-                     sender when you set up DNS for echapps.com.)
+                     sender when you set up DNS for your own domain.)
   NEWSLETTER_SITE_URL optional — used in subject only
 """
 

@@ -45,7 +45,7 @@ Open `newsletter.html` in a browser for the full version, or `email.html` to pre
 
 ### 2. Sign up for Resend
 
-1. https://resend.com → Sign up **with `Ben@eChapps.com`** (important — the sandbox sender can only deliver to this address).
+1. https://resend.com → Sign up **with the same address you'll deliver to** (important — the sandbox sender can only deliver to the Resend account owner's email).
 2. https://resend.com/api-keys → Create API key (name it "Daily Brief").
 3. Free tier: 100 emails/day, 3,000/month — plenty.
 
@@ -56,7 +56,7 @@ https://claude.ai/code/routines → **New routine**:
 - **Repository:** this repo, `main` branch
 - **Environment secrets:**
   - `XAI_API_KEY` = your Grok key from https://console.x.ai
-  - `NEWSLETTER_TO` = `Ben@eChapps.com`
+  - `NEWSLETTER_TO` = your delivery email
   - `NEWSLETTER_SITE_URL` = `https://bwc904.github.io/newsletter`
   - `RESEND_API_KEY` = your Resend key from step 2
 - **Connectors:** none required

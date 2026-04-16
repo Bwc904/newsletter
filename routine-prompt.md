@@ -28,7 +28,7 @@ Do not modify `newsletter.py`, `render.py`, `publish.py`, `send_email.py`, `topi
 
 ## Environment secrets required
 - `XAI_API_KEY` — Grok API key from https://console.x.ai
-- `NEWSLETTER_TO` — recipient email (Ben@eChapps.com)
+- `NEWSLETTER_TO` — recipient email (set in the routine's env secrets)
 - `NEWSLETTER_SITE_URL` — public base URL (https://bwc904.github.io/newsletter)
 - `RESEND_API_KEY` — Resend API key from https://resend.com/api-keys
 - `NEWSLETTER_FROM` — (optional) verified sender; defaults to `Daily Brief <onboarding@resend.dev>` which only delivers to the Resend account's owner email
