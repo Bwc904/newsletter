@@ -7,7 +7,7 @@ A step-by-step guide to building a personalized daily newsletter that automatica
 - A full dark-mode "web magazine" edition hosted on GitHub Pages
 - Total cost: ~$3–5/month (Grok API only)
 - Runs on autopilot in the cloud — your laptop doesn't need to be on
-
+- Side note, a user can avoid the x api and just have claude scrape reddit if desired
 **Prerequisites:**
 - Claude Pro or higher (for Claude Code Routines)
 - A credit card for xAI (Grok) — set a small monthly limit
