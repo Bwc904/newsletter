@@ -16,6 +16,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -35,9 +36,34 @@ if _ca and not os.environ.get("GRPC_DEFAULT_SSL_ROOTS_FILE_PATH"):
 #    where background DNS traffic is blocked / throttled.
 os.environ.setdefault("GRPC_DNS_RESOLVER", "native")
 
+import grpc
 from xai_sdk import Client
 from xai_sdk.chat import system, user
 from xai_sdk.tools import web_search, x_search
+
+# grpc status codes that are transient per gRPC spec — worth retrying.
+_RETRYABLE_GRPC_CODES = {
+    grpc.StatusCode.UNAVAILABLE,         # e.g. "DNS cache overflow", network blip
+    grpc.StatusCode.DEADLINE_EXCEEDED,    # timeout
+    grpc.StatusCode.RESOURCE_EXHAUSTED,   # upstream rate limit
+    grpc.StatusCode.INTERNAL,             # transient server-side issue
+    grpc.StatusCode.ABORTED,              # upstream retry hint
+}
+
+
+def _is_retryable(exc: BaseException) -> bool:
+    """True if the error looks like a transient network/server issue worth retrying."""
+    if isinstance(exc, grpc.RpcError):
+        try:
+            return exc.code() in _RETRYABLE_GRPC_CODES
+        except Exception:
+            return True
+    # Fallback for non-grpc wrapped errors with transient-looking messages.
+    msg = str(exc).lower()
+    return any(tok in msg for tok in (
+        "unavailable", "deadline", "cache overflow", "reset by peer",
+        "connection reset", "temporarily unavailable", "timed out",
+    ))
 
 
 ROOT = Path(__file__).parent
@@ -165,6 +191,30 @@ def fetch_column(client: Client, col: dict, rules: dict, since_date: str) -> dic
     return parsed
 
 
+def fetch_column_with_retry(client: Client, col: dict, rules: dict, since_date: str,
+                            max_attempts: int = 3) -> dict:
+    """Run fetch_column with exponential backoff on transient errors.
+
+    Backoffs: 5s, 20s, 60s between attempts. On final failure, the exception
+    propagates to the caller (main loop handles it and marks the column as
+    failed so other columns can still publish)."""
+    backoffs = [5, 20, 60]
+    for attempt in range(max_attempts):
+        try:
+            return fetch_column(client, col, rules, since_date)
+        except Exception as e:
+            is_last = attempt == max_attempts - 1
+            if is_last or not _is_retryable(e):
+                raise
+            wait = backoffs[attempt] if attempt < len(backoffs) else backoffs[-1]
+            short = str(e)[:140].replace("\n", " ")
+            print(f"[retry] {col['name']} attempt {attempt + 1}/{max_attempts} failed: {short}",
+                  file=sys.stderr)
+            print(f"[retry] retrying in {wait}s...", file=sys.stderr)
+            time.sleep(wait)
+    raise RuntimeError("unreachable — loop should have returned or raised")
+
+
 def pick_hero(columns: list[dict]) -> dict | None:
     """Pick the single most important post/article across all columns as the hero.
     Free — pure local selection, no extra LLM call."""
@@ -227,11 +277,30 @@ def main() -> int:
     total_tokens = 0
     for col in columns_cfg:
         print(f"[fetch] {col['name']}...", file=sys.stderr)
-        result = fetch_column(client, col, rules, since_date)
+        try:
+            result = fetch_column_with_retry(client, col, rules, since_date)
+        except Exception as e:
+            print(f"[ERROR] {col['name']} failed after all retries: {e}", file=sys.stderr)
+            result = {
+                "column": col["name"],
+                "slug": col["slug"],
+                "accent": col.get("accent", "#64748b"),
+                "x_posts": [],
+                "news": [],
+                "commentary": "(Data unavailable today — fetch failed after retries.)",
+                "_fetch_error": str(e)[:500],
+            }
         columns.append(result)
         u = result.get("_usage") or {}
         if u.get("total_tokens"):
             total_tokens += u["total_tokens"]
+
+    # Only abort the whole run if EVERY column failed. Otherwise publish
+    # whatever we got — a partial newsletter beats no newsletter.
+    successful = [c for c in columns if not c.get("_fetch_error")]
+    if not successful:
+        print("[FATAL] all columns failed to fetch — aborting", file=sys.stderr)
+        return 1
 
     hero = pick_hero(columns)
 
