@@ -16,6 +16,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +27,52 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).parent
 EMAIL_HTML = ROOT / "email.html"
 NEWSLETTER_JSON = ROOT / "newsletter.json"
+
+# HTTP status codes worth retrying (per standard HTTP retry semantics).
+_RETRYABLE_HTTP_STATUSES = {408, 425, 429, 500, 502, 503, 504}
+
+
+def _is_retryable_resend(exc: BaseException) -> bool:
+    """True if the Resend error looks like a transient upstream issue."""
+    # Resend SDK exceptions may expose .status_code / .http_status
+    status = getattr(exc, "status_code", None) or getattr(exc, "http_status", None)
+    if status in _RETRYABLE_HTTP_STATUSES:
+        return True
+    # Fallback to message sniffing — the SDK sometimes raises generic exceptions
+    # (e.g. "Expected JSON response but got: text/plain" when a proxy returns an
+    # HTML error page).
+    msg = str(exc).lower()
+    return any(tok in msg for tok in (
+        "503", "502", "504", "429",
+        "service unavailable", "temporarily unavailable",
+        "cache overflow", "expected json response but got: text/plain",
+        "timed out", "timeout", "connection reset", "connection aborted",
+        "bad gateway", "gateway timeout",
+    ))
+
+
+def send_with_retry(params: dict, max_attempts: int = 4) -> dict:
+    """Call resend.Emails.send() with exponential backoff on transient failures.
+
+    Backoffs: 10s, 30s, 90s between attempts. Raises the final exception if all
+    attempts fail."""
+    backoffs = [10, 30, 90]
+    last_exc: BaseException | None = None
+    for attempt in range(max_attempts):
+        try:
+            return resend.Emails.send(params)
+        except Exception as e:
+            last_exc = e
+            is_last = attempt == max_attempts - 1
+            if is_last or not _is_retryable_resend(e):
+                raise
+            wait = backoffs[attempt] if attempt < len(backoffs) else backoffs[-1]
+            short = str(e)[:140].replace("\n", " ")
+            print(f"[retry] Resend attempt {attempt + 1}/{max_attempts} failed: {short}",
+                  file=sys.stderr)
+            print(f"[retry] retrying in {wait}s...", file=sys.stderr)
+            time.sleep(wait)
+    raise last_exc if last_exc else RuntimeError("unreachable")
 
 
 def plaintext_fallback(data: dict, url: str) -> str:
@@ -93,9 +140,9 @@ def main() -> int:
     }
 
     try:
-        result = resend.Emails.send(params)
+        result = send_with_retry(params)
     except Exception as e:
-        print(f"ERROR: Resend send failed: {e}", file=sys.stderr)
+        print(f"ERROR: Resend send failed after retries: {e}", file=sys.stderr)
         return 1
 
     print(f"[done] sent to {to} via Resend (id={result.get('id','?')})")
