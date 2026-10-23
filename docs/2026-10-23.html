@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="supported-color-schemes" content="dark only">
+<title>Daily Brief · 2026-10-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#09090b; color:#e4e4e7; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(34,211,238,0.10),transparent),radial-gradient(ellipse 900px 600px at 90% 15%,rgba(245,158,11,0.08),transparent),radial-gradient(ellipse 800px 500px at 50% 100%,rgba(167,139,250,0.10),transparent); background-attachment:fixed; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 20px; }
+  .serif { font-family:'Instrument Serif','Iowan Old Style','Palatino',Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  .kicker { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:600; font-family:'Space Grotesk',sans-serif; }
+  .masthead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid #27272a; margin-bottom:22px; }
+  .masthead h1 { margin:0; font-size:46px; line-height:1; font-weight:400; letter-spacing:-0.02em; color:#fafafa; font-family:'Instrument Serif',Georgia,serif; }
+  .masthead h1 em { font-style:italic; color:#e4e4e7; }
+  .masthead .date { font-size:13px; color:#a1a1aa; }
+  .tldr { position:relative; background:rgba(24,24,27,0.55); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 20px; margin-bottom:28px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.35); overflow:hidden; }
+  .tldr::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(245,158,11,0.04) 45%,rgba(167,139,250,0.08)); pointer-events:none; }
+  .tldr > * { position:relative; }
+  .tldr .tldr-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:700; margin-bottom:10px; display:block; }
+  .tldr ul { margin:0; padding:0; list-style:none; }
+  .tldr li { padding:8px 0; border-bottom:1px solid #27272a; display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#e4e4e7; line-height:1.45; }
+  .tldr li:last-child { border-bottom:none; }
+  .tldr .t-dot { width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .tldr .t-col { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-right:8px; }
+  .hero { background:rgba(24,24,27,0.5); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:32px; margin-bottom:32px; position:relative; overflow:hidden; backdrop-filter:blur(24px) saturate(160%); -webkit-backdrop-filter:blur(24px) saturate(160%); box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px rgba(0,0,0,0.45); }
+  .hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22d3ee,#f59e0b,#a78bfa); z-index:2; }
+  .hero::after { content:''; position:absolute; inset:-40%; background:radial-gradient(circle at 20% 10%,rgba(34,211,238,0.18),transparent 45%),radial-gradient(circle at 85% 20%,rgba(245,158,11,0.14),transparent 40%),radial-gradient(circle at 60% 100%,rgba(167,139,250,0.16),transparent 45%); pointer-events:none; filter:blur(20px); z-index:0; }
+  .hero > * { position:relative; z-index:1; }
+  .hero .tag { display:inline-block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:999px; background:#27272a; color:#fafafa; margin-bottom:14px; }
+  .hero h2 { margin:0 0 12px 0; font-size:34px; font-weight:400; line-height:1.15; color:#fafafa; letter-spacing:-0.015em; font-family:'Instrument Serif',Georgia,serif; }
+  .hero .meta { font-size:13px; color:#a1a1aa; margin-bottom:16px; }
+  .hero .body { font-size:15px; line-height:1.6; color:#d4d4d8; margin-bottom:20px; }
+  .hero .cta { display:inline-block; padding:10px 20px; background:#fafafa; color:#09090b !important; font-weight:600; font-size:13px; border-radius:8px; }
+  .cols { display:table; width:100%; border-spacing:16px 0; margin-left:-16px; }
+  .col { display:table-cell; width:33.3%; vertical-align:top; }
+  @media only screen and (max-width:700px) { .cols { display:block; margin-left:0; } .col { display:block; width:100%; padding-bottom:16px; } .masthead h1 { font-size:26px; } .hero h2 { font-size:22px; } }
+  .col-head { display:flex; align-items:center; gap:10px; padding:14px 16px; background:#18181b; border:1px solid #27272a; border-radius:12px; margin-bottom:12px; }
+  .col-dot { width:8px; height:8px; border-radius:50%; }
+  .col-name { font-size:14px; font-weight:700; color:#fafafa; letter-spacing:-0.01em; }
+  .col-body { background:transparent; border:none; padding:10px 0 0 0; }
+  .card { padding:18px 18px 16px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; }
+  .card:last-child { margin-bottom:0; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .sig { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; background:#27272a; color:#fafafa; letter-spacing:0.04em; white-space:nowrap; text-transform:uppercase; }
+  .card .headline { margin:0 0 8px 0; font-size:15px; line-height:1.35; font-weight:700; color:#fafafa; letter-spacing:-0.01em; font-family:'Space Grotesk',sans-serif; }
+  .card .post-body { margin:0 0 10px 0; font-size:13px; line-height:1.5; color:#a1a1aa; border-left:2px solid #27272a; padding-left:10px; }
+  .card .author { font-size:12px; color:#a1a1aa; margin-bottom:8px; }
+  .card .author strong { color:#fafafa; font-weight:600; }
+  .card .author .handle { color:#71717a; }
+  .card .engage { display:flex; align-items:center; gap:10px; font-size:11.5px; color:#a1a1aa; }
+  .card .why { margin-top:10px; padding:10px 12px; background:#09090b; border-left:3px solid currentColor; font-size:12.5px; color:#d4d4d8; line-height:1.55; border-radius:4px; }
+  .card .why strong { color:#fafafa; }
+  .card a.link { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+  .news-card { padding:14px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; display:block; }
+  .news-card:last-child { margin-bottom:0; }
+  .news-card .t { font-size:14px; font-weight:700; color:#fafafa; line-height:1.35; margin-bottom:4px; letter-spacing:-0.005em; font-family:'Space Grotesk',sans-serif; }
+  .news-card .s { font-size:11px; color:#71717a; }
+  .news-card .sum { font-size:12.5px; color:#a1a1aa; margin-top:6px; line-height:1.5; }
+  .section-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#71717a; font-weight:700; padding:14px 18px 6px 18px; }
+  .commentary { font-size:13px; color:#d4d4d8; font-style:italic; padding:14px 18px; line-height:1.55; border-bottom:1px solid #1f1f22; background:#0c0c0e; }
+  .footer { margin-top:36px; padding-top:20px; border-top:1px solid #27272a; text-align:center; font-size:11px; color:#52525b; }
+  .footer a { color:#71717a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>The <em>morning</em> edition</h1>
+    </div>
+    <div class="date">2026-10-23</div>
+  </div>
+
+  
+  <div class="tldr">
+    <span class="tldr-label">Today in 30 seconds</span>
+    <ul>
+      
+      <li>
+        <span class="t-dot" style="background:#22d3ee;"></span>
+        <div><span class="t-col" style="color:#22d3ee;">AI</span>Crime group deploys multi-model AI agents to breach 400+ banks; access revoked.</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#f59e0b;"></span>
+        <div><span class="t-col" style="color:#f59e0b;">Ecommerce & Amazon</span>Salesforce to acquire Braze for $5.66B to expand AI-powered marketing</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#a78bfa;"></span>
+        <div><span class="t-col" style="color:#a78bfa;">Business & World</span>FTC subpoenas OpenAI, Anthropic on AI safety</div>
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  <div class="hero">
+    <span class="tag" style="background:#22d3ee;color:#09090b;">⭐ Top story · AI</span>
+    
+      <h2>Viral thread warns of 'Black October' fast AI takeoff with cyber attacks and breakthroughs.</h2>
+      <div class="meta"><strong style="color:#fafafa;">john milinovich</strong> <span style="color:#71717a;">@@jmilinovich</span> · 17h ago · ❤ 9.8K · 🔁 953 · 💬 375</div>
+      <div class="body"># Black October ... frontier AI models ... as advanced as the most sophisticated programmers ... spin up 10,000 of them ... open source models ... being used by black hat hackers ... fast takeoff scenario ... massive breakthroughs in life sciences, fundamental computer science, materials science, and pure mathematics</div>
+      <div class="body" style="color:#a1a1aa;"><strong style="color:#fafafa;">Why it matters:</strong> High-signal alarm on real-world AI security risks and rapid capability jumps.</div>
+      <a class="cta" href="https://x.com/jmilinovich/status/2113308026954543396">Open on X →</a>
+    
+  </div>
+  
+
+  <table class="cols" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #22d3ee;">
+        <span class="col-dot" style="background:#22d3ee;"></span>
+        <span class="col-name">AI</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Black October vibes dominate as agents flip from productivity rocket fuel to real attack surface; meanwhile the tooling layer quietly standardizes.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Anthropic donates Agent Skills standard to open foundation; 70+ platforms adopt.</h3>
+          
+          <div class="post-body">We're donating Agent Skills to the Agentic AI Foundation ... 70+ agent platforms have integrated the standard, including ChatGPT, Cursor, GitHub Copilot, and VS Code.</div>
+          
+          <div class="author"><strong>ClaudeDevs</strong> <span class="handle">@@ClaudeDevs · 16h ago</span></div>
+          <div class="engage">❤ 7.4K · 🔁 334 · 💬 237</div>
+          <div class="why"><strong>Why:</strong> Major step toward interoperable agent ecosystems across frontier tools.</div>
+          <a class="link" href="https://x.com/ClaudeDevs/status/2113328526413996100" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Crime group deploys multi-model AI agents to breach 400+ banks; access revoked.</h3>
+          
+          <div class="post-body">JUST IN: A crime group used Claude, Grok and Kimi AI agents running in parallel to attack more than 400 banks ... Anthropic has cut off its access, and xAI is investigating.</div>
+          
+          <div class="author"><strong>Shanaka Anslem Perera ⚡</strong> <span class="handle">@@shanaka86 · 1d ago</span></div>
+          <div class="engage">❤ 3.1K · 🔁 934 · 💬 113</div>
+          <div class="why"><strong>Why:</strong> Concrete evidence of frontier models enabling large-scale automated attacks.</div>
+          <a class="link" href="https://x.com/shanaka86/status/2113146345657954463" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Builder shows Claude Code multi-agent workflow turning papers into browser physics lab.</h3>
+          
+          <div class="post-body">AI agents in Claude Code can turn a stack of research PDFs into an interactive physics lab ... 10 subagents ... analysts, coders, auditors, UI agents ... single HTML file</div>
+          
+          <div class="author"><strong>plusxbt</strong> <span class="handle">@@plusxbt · 16h ago</span></div>
+          <div class="engage">❤ 58 · 🔁 4 · 💬 5</div>
+          <div class="why"><strong>Why:</strong> Novel agentic workflow for reproducible scientific experimentation from PDFs.</div>
+          <a class="link" href="https://x.com/plusxbt/status/2113320127894536515" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Claude Code creator: small teams shipping 100x with thousands of agents; domain builders win.</h3>
+          
+          <div class="post-body">Boris (creator of Claude Code) ... 'A few thousand' agents ... output up ~10x per engineer ... one or two people can outship a team 100 times their size ... domain-specific builders are the future</div>
+          
+          <div class="author"><strong>Mihail Eric</strong> <span class="handle">@@mihail_eric · 19h ago</span></div>
+          <div class="engage">❤ 227 · 🔁 22 · 💬 49</div>
+          <div class="why"><strong>Why:</strong> Insider view on agent-scale productivity and future of specialized AI tools.</div>
+          <a class="link" href="https://x.com/mihail_eric/status/2113277483701395508" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-october-23-2026/" style="display:block;">
+          <div class="t">Microsoft medical AI beats physicians on complex cases</div>
+          <div class="s">The Neuron · 5h ago</div>
+          <div class="sum">Sequential-diagnosis system >2x accurate vs general physicians in Science study.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-october-23-2026/" style="display:block;">
+          <div class="t">DataVendor launches public beta data marketplace</div>
+          <div class="s">The Neuron · 5h ago</div>
+          <div class="sum">Platform for researchers/companies to buy/sell AI training datasets.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-october-23-2026/" style="display:block;">
+          <div class="t">HeyGen releases first general-purpose video model</div>
+          <div class="s">The Neuron · 5h ago</div>
+          <div class="sum">HeyGen Video 1 tops blind text-to-video benchmarks; Canva launches image model too.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #f59e0b;">
+        <span class="col-dot" style="background:#f59e0b;"></span>
+        <span class="col-name">Ecommerce & Amazon</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">AI M&A heats up while Amazon tightens FBM returns; small operators quietly testing offer bundles and upper-funnel creative for real lift.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">60-day Amazon ASIN launch playbook: pre-launch build, PPC ramp, consolidate.</h3>
+          
+          <div class="post-body">I've managed $100M+ in annual Amazon revenue. Sharing the exact launch system that ranks new ASINs in 60 days...</div>
+          
+          <div class="author"><strong>Alex Stoykov</strong> <span class="handle">@@stoykovallex1 · 22h ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Detailed tactical sequence from operator who scaled $100M+ revenue.</div>
+          <a class="link" href="https://x.com/stoykovallex1/status/2113234031663861769" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Meta data: upper-funnel creative lifts performance 138%.</h3>
+          
+          <div class="post-body">If you only focus on performance, you're not as efficient as you think. Your first job is to make sure they remember you. Meta showed data on brands that added upper funnel. 138% lift.</div>
+          
+          <div class="author"><strong>Oli Cimet</strong> <span class="handle">@@sociallywitholi · 22h ago</span></div>
+          <div class="engage">❤ 2 · 🔁 0 · 💬 2</div>
+          <div class="why"><strong>Why:</strong> Challenges pure DR focus; pushes cultural/contextual creative for DTC.</div>
+          <a class="link" href="https://x.com/sociallywitholi/status/2113239052195352764" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Dropshipper boosts AOV by bundling value instead of pure discounts.</h3>
+          
+          <div class="post-body">One thing I spent a lot of time on was the offer. Instead of just throwing a massive discount... built in complimentary value... seeing good amount of customers choosing the higher value options.</div>
+          
+          <div class="author"><strong>Stoic Ecom</strong> <span class="handle">@@Stoic_Ecom · 2h ago</span></div>
+          <div class="engage">❤ 6 · 🔁 1 · 💬 4</div>
+          <div class="why"><strong>Why:</strong> Small account, high-engagement offer tactic for conversion lift.</div>
+          <a class="link" href="https://x.com/Stoic_Ecom/status/2113539993805418587" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Blinkit private-label caution vs Swiggy Instamart all-in push.</h3>
+          
+          <div class="post-body">Long blinkit. They get it. Ecom companies in India have never been able to develop big private label brands.</div>
+          
+          <div class="author"><strong>Akshay G Jain</strong> <span class="handle">@@Ajain112 · 1d ago</span></div>
+          <div class="engage">❤ 610 · 🔁 12 · 💬 24</div>
+          <div class="why"><strong>Why:</strong> Mainstream debate on long-term profitability of marketplace private labels.</div>
+          <a class="link" href="https://x.com/Ajain112/status/2113147315972366815" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">Content funnel turns 12 daily visits into 340 + inbound deals.</h3>
+          
+          <div class="post-body">A founder was getting 12 profile visits a day. We turned that into 340. He now closes 3-5 deals per month from content.</div>
+          
+          <div class="author"><strong>Anita Joshi</strong> <span class="handle">@@anita_joshii · 1d ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Small-account case study on converting X into B2B pipeline.</div>
+          <a class="link" href="https://x.com/anita_joshii/status/2113061270546952405" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.digitalcommerce360.com/" style="display:block;">
+          <div class="t">Salesforce to acquire Braze for $5.66B to expand AI-powered marketing</div>
+          <div class="s">Digital Commerce 360 · 1d ago</div>
+          <div class="sum">Major consolidation: Salesforce buys Braze to deepen AI marketing stack.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.digitalcommerce360.com/" style="display:block;">
+          <div class="t">David's Bridal plans to spin off its AI-powered Pearl platform</div>
+          <div class="s">Digital Commerce 360 · 1d ago</div>
+          <div class="sum">Bridal retailer to spin off AI platform as standalone business.</div>
+        </a>
+        
+        <a class="news-card" href="https://novadata.io/resources/news" style="display:block;">
+          <div class="t">Amazon prepaid return labels for FBM orders — December 18 rule</div>
+          <div class="s">NovaData · 2d ago</div>
+          <div class="sum">US FBM sellers must upload prepaid return label within 7 days or face refund charge.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #a78bfa;">
+        <span class="col-dot" style="background:#a78bfa;"></span>
+        <span class="col-name">Business & World</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Solo GPs and AI verification tools are quietly rewriting the rules while regulators sharpen their pencils on AI safety.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Founder launches $50M solo GP fund after scaling construction startup.</h3>
+          
+          <div class="post-body">I'm excited to launch Relational Capital, a $50m solo GP fund. I spent the last 8 years as a founder, building @usekojo into the largest US construction procurement platform. Now I'm backing founders at the earliest stages with $1m-$5m checks.</div>
+          
+          <div class="author"><strong>Maria Davidson</strong> <span class="handle">@@MariaDavidson · 25.0K followers · 16h ago</span></div>
+          <div class="engage">❤ 1.1K · 🔁 52 · 💬 254</div>
+          <div class="why"><strong>Why:</strong> Solo GP model gains traction as experienced operators enter VC.</div>
+          <a class="link" href="https://x.com/MariaDavidson/status/2113320529172254825" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Founder shares 50 launch platforms for bootstrapped startups.</h3>
+          
+          <div class="post-body">50 places to launch your startup: lists HN, Reddit, Product Hunt, Indie Hackers, Betalist and 45 more platforms for founders to ship.</div>
+          
+          <div class="author"><strong>Miracle Nnamdi</strong> <span class="handle">@@Miracle_NNnn · 18.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 2.1K · 🔁 223 · 💬 141</div>
+          <div class="why"><strong>Why:</strong> Practical distribution playbook for non-VC founders.</div>
+          <a class="link" href="https://x.com/Miracle_NNnn/status/2113140729933422877" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">AI-powered formal verification scales to 123 real open-source projects.</h3>
+          
+          <div class="post-body">We formally verified 123 open-source projects with Anthropic. Now launching OSS Verify to prove software is crash-free or send patches. Free for open-source.</div>
+          
+          <div class="author"><strong>Theorem</strong> <span class="handle">@@theoremlabs · 12.0K followers · 11h ago</span></div>
+          <div class="engage">❤ 665 · 🔁 83 · 💬 27</div>
+          <div class="why"><strong>Why:</strong> Novel tool could reshape software security and liability.</div>
+          <a class="link" href="https://x.com/theoremlabs/status/2113396868814360821" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">YC batch hits record: 14 startups reach $1M ARR pre-Demo Day.</h3>
+          
+          <div class="post-body">$1M ARR used to take years. In the last YC batch, 14 companies hit it before Demo Day. Average weekly revenue growth 14% across ~190 companies.</div>
+          
+          <div class="author"><strong>Gabriel Jarrosson</strong> <span class="handle">@@GJarrosson · 8.0K followers · 19h ago</span></div>
+          <div class="engage">❤ 5 · 🔁 0 · 💬 3</div>
+          <div class="why"><strong>Why:</strong> Signals faster path to traction for AI-era founders.</div>
+          <a class="link" href="https://x.com/GJarrosson/status/2113285077677363530" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">SF startup claims breakthrough in materials science/alchemy.</h3>
+          
+          <div class="post-body">A startup in San Francisco says it just turned cheap metal into gold. But gold isn’t even the point.</div>
+          
+          <div class="author"><strong>Sumit Roy</strong> <span class="handle">@@sumitroy2 · 45.0K followers · 14h ago</span></div>
+          <div class="engage">❤ 1.4K · 🔁 154 · 💬 24</div>
+          <div class="why"><strong>Why:</strong> Potential disruption in manufacturing or resource extraction.</div>
+          <a class="link" href="https://x.com/sumitroy2/status/2113361340941394343" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.reuters.com/business/otterai-raises-320-million-non-equity-financing-expand-enterprise-business-2026-10-20/" style="display:block;">
+          <div class="t">Otter.ai raises $320M non-dilutive growth financing</div>
+          <div class="s">Reuters · 3d ago</div>
+          <div class="sum">AI transcription firm secures $320M repayable financing to scale enterprise and global ops.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.governance-intelligence.com/13906-2/" style="display:block;">
+          <div class="t">FTC subpoenas OpenAI, Anthropic on AI safety</div>
+          <div class="s">Governance Intelligence · 6d ago</div>
+          <div class="sum">Regulators probe safety incidents and safeguards at top AI labs amid state lawsuits.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.goodwinlaw.com/en/insights/publications/2026/10/insights-technology-antc-antitrust-competition-technology-3q-2026" style="display:block;">
+          <div class="t">California expands antitrust law to single-firm conduct</div>
+          <div class="s">Goodwin Law · 7d ago</div>
+          <div class="sum">New COMPETE Act broadens state antitrust reach to dominant firm behavior.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    </tr>
+  </table>
+
+  <div class="footer">
+    Generated 2026-10-23T10:07:35.148915+00:00 · Powered by Claude Code Routines + Grok API · 42.0K tokens
+  </div>
+
+</div>
+</body>
+</html>
