@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="supported-color-schemes" content="dark only">
+<title>Daily Brief · 2026-10-31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#09090b; color:#e4e4e7; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(34,211,238,0.10),transparent),radial-gradient(ellipse 900px 600px at 90% 15%,rgba(245,158,11,0.08),transparent),radial-gradient(ellipse 800px 500px at 50% 100%,rgba(167,139,250,0.10),transparent); background-attachment:fixed; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 20px; }
+  .serif { font-family:'Instrument Serif','Iowan Old Style','Palatino',Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  .kicker { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:600; font-family:'Space Grotesk',sans-serif; }
+  .masthead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid #27272a; margin-bottom:22px; }
+  .masthead h1 { margin:0; font-size:46px; line-height:1; font-weight:400; letter-spacing:-0.02em; color:#fafafa; font-family:'Instrument Serif',Georgia,serif; }
+  .masthead h1 em { font-style:italic; color:#e4e4e7; }
+  .masthead .date { font-size:13px; color:#a1a1aa; }
+  .tldr { position:relative; background:rgba(24,24,27,0.55); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 20px; margin-bottom:28px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.35); overflow:hidden; }
+  .tldr::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(245,158,11,0.04) 45%,rgba(167,139,250,0.08)); pointer-events:none; }
+  .tldr > * { position:relative; }
+  .tldr .tldr-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:700; margin-bottom:10px; display:block; }
+  .tldr ul { margin:0; padding:0; list-style:none; }
+  .tldr li { padding:8px 0; border-bottom:1px solid #27272a; display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#e4e4e7; line-height:1.45; }
+  .tldr li:last-child { border-bottom:none; }
+  .tldr .t-dot { width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .tldr .t-col { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-right:8px; }
+  .hero { background:rgba(24,24,27,0.5); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:32px; margin-bottom:32px; position:relative; overflow:hidden; backdrop-filter:blur(24px) saturate(160%); -webkit-backdrop-filter:blur(24px) saturate(160%); box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px rgba(0,0,0,0.45); }
+  .hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22d3ee,#f59e0b,#a78bfa); z-index:2; }
+  .hero::after { content:''; position:absolute; inset:-40%; background:radial-gradient(circle at 20% 10%,rgba(34,211,238,0.18),transparent 45%),radial-gradient(circle at 85% 20%,rgba(245,158,11,0.14),transparent 40%),radial-gradient(circle at 60% 100%,rgba(167,139,250,0.16),transparent 45%); pointer-events:none; filter:blur(20px); z-index:0; }
+  .hero > * { position:relative; z-index:1; }
+  .hero .tag { display:inline-block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:999px; background:#27272a; color:#fafafa; margin-bottom:14px; }
+  .hero h2 { margin:0 0 12px 0; font-size:34px; font-weight:400; line-height:1.15; color:#fafafa; letter-spacing:-0.015em; font-family:'Instrument Serif',Georgia,serif; }
+  .hero .meta { font-size:13px; color:#a1a1aa; margin-bottom:16px; }
+  .hero .body { font-size:15px; line-height:1.6; color:#d4d4d8; margin-bottom:20px; }
+  .hero .cta { display:inline-block; padding:10px 20px; background:#fafafa; color:#09090b !important; font-weight:600; font-size:13px; border-radius:8px; }
+  .cols { display:table; width:100%; border-spacing:16px 0; margin-left:-16px; }
+  .col { display:table-cell; width:33.3%; vertical-align:top; }
+  @media only screen and (max-width:700px) { .cols { display:block; margin-left:0; } .col { display:block; width:100%; padding-bottom:16px; } .masthead h1 { font-size:26px; } .hero h2 { font-size:22px; } }
+  .col-head { display:flex; align-items:center; gap:10px; padding:14px 16px; background:#18181b; border:1px solid #27272a; border-radius:12px; margin-bottom:12px; }
+  .col-dot { width:8px; height:8px; border-radius:50%; }
+  .col-name { font-size:14px; font-weight:700; color:#fafafa; letter-spacing:-0.01em; }
+  .col-body { background:transparent; border:none; padding:10px 0 0 0; }
+  .card { padding:18px 18px 16px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; }
+  .card:last-child { margin-bottom:0; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .sig { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; background:#27272a; color:#fafafa; letter-spacing:0.04em; white-space:nowrap; text-transform:uppercase; }
+  .card .headline { margin:0 0 8px 0; font-size:15px; line-height:1.35; font-weight:700; color:#fafafa; letter-spacing:-0.01em; font-family:'Space Grotesk',sans-serif; }
+  .card .post-body { margin:0 0 10px 0; font-size:13px; line-height:1.5; color:#a1a1aa; border-left:2px solid #27272a; padding-left:10px; }
+  .card .author { font-size:12px; color:#a1a1aa; margin-bottom:8px; }
+  .card .author strong { color:#fafafa; font-weight:600; }
+  .card .author .handle { color:#71717a; }
+  .card .engage { display:flex; align-items:center; gap:10px; font-size:11.5px; color:#a1a1aa; }
+  .card .why { margin-top:10px; padding:10px 12px; background:#09090b; border-left:3px solid currentColor; font-size:12.5px; color:#d4d4d8; line-height:1.55; border-radius:4px; }
+  .card .why strong { color:#fafafa; }
+  .card a.link { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+  .news-card { padding:14px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; display:block; }
+  .news-card:last-child { margin-bottom:0; }
+  .news-card .t { font-size:14px; font-weight:700; color:#fafafa; line-height:1.35; margin-bottom:4px; letter-spacing:-0.005em; font-family:'Space Grotesk',sans-serif; }
+  .news-card .s { font-size:11px; color:#71717a; }
+  .news-card .sum { font-size:12.5px; color:#a1a1aa; margin-top:6px; line-height:1.5; }
+  .section-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#71717a; font-weight:700; padding:14px 18px 6px 18px; }
+  .commentary { font-size:13px; color:#d4d4d8; font-style:italic; padding:14px 18px; line-height:1.55; border-bottom:1px solid #1f1f22; background:#0c0c0e; }
+  .footer { margin-top:36px; padding-top:20px; border-top:1px solid #27272a; text-align:center; font-size:11px; color:#52525b; }
+  .footer a { color:#71717a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>The <em>morning</em> edition</h1>
+    </div>
+    <div class="date">2026-10-31</div>
+  </div>
+
+  
+  <div class="tldr">
+    <span class="tldr-label">Today in 30 seconds</span>
+    <ul>
+      
+      <li>
+        <span class="t-dot" style="background:#22d3ee;"></span>
+        <div><span class="t-col" style="color:#22d3ee;">AI</span>Google releases Gemini 4 Carbon</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#f59e0b;"></span>
+        <div><span class="t-col" style="color:#f59e0b;">Ecommerce & Amazon</span>OpenCommerce: one API for 5k stores + agentic checkout.</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#a78bfa;"></span>
+        <div><span class="t-col" style="color:#a78bfa;">Business & World</span>Ex-DOJ antitrust chiefs launch AI startup for plaintiffs</div>
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  <div class="hero">
+    <span class="tag" style="background:#22d3ee;color:#09090b;">⭐ Top story · AI</span>
+    
+      <h2>OpenAI releases GPT-6.1 Terra</h2>
+      <div class="meta"><strong style="color:#fafafa;">OpenAI</strong> · 5d ago</div>
+      <div class="body">Fast computer-use model with 1M context, visual reasoning; 50% cheaper than prior Terra.</div>
+      <a class="cta" href="https://openai.com/index/introducing-gpt-6-1-terra/">Read full article →</a>
+    
+  </div>
+  
+
+  <table class="cols" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #22d3ee;">
+        <span class="col-dot" style="background:#22d3ee;"></span>
+        <span class="col-name">AI</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Agent teams and desktop control are moving from demos to daily drivers; the frontier just got hands.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Agent-desktop: parallel computer-use agents with own cursors across OSes.</h3>
+          
+          <div class="post-body">Introducing agent-desktop: agent-browser for your whole computer. Computer Use for any coding agent on macOS, Windows, Linux. Runs in bg while you keep working. Agents use your computer in parallel, each with its own cursor.</div>
+          
+          <div class="author"><strong>Chris Tate</strong> <span class="handle">@@ctatedev · 179.4K followers · 9h ago</span></div>
+          <div class="engage">❤ 4.4K · 🔁 309 · 💬 260</div>
+          <div class="why"><strong>Why:</strong> Turns any coding agent into a full desktop operator running in background.</div>
+          <a class="link" href="https://x.com/ctatedev/status/2116323148706771302" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Glif launches AI modeling agency for end-to-end ad/video content creation.</h3>
+          
+          <div class="post-body">Today we’re launching the first AI modeling agency right inside Glif. Cast hundreds of real AI models, drop your product, idea or brief and let Glif create super compelling content for you end to end.</div>
+          
+          <div class="author"><strong>GLIF</strong> <span class="handle">@@heyglif · 193.5K followers · 18h ago</span></div>
+          <div class="engage">❤ 2.6K · 🔁 212 · 💬 289</div>
+          <div class="why"><strong>Why:</strong> First platform-native AI talent agency for brands and creators.</div>
+          <a class="link" href="https://x.com/heyglif/status/2116198551814623370" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Free Claude Code skill auto-manages Meta ads, cuts CPL from $3.15 to $1.84.</h3>
+          
+          <div class="post-body">i built a skill that manages your meta ads for you. it runs inside claude code and it's completely free. 2 times per day it studies your ads performance and sends you a report with options.</div>
+          
+          <div class="author"><strong>Tobi</strong> <span class="handle">@@tobiadonadon_ · 210.5K followers · 12h ago</span></div>
+          <div class="engage">❤ 970 · 🔁 76 · 💬 758</div>
+          <div class="why"><strong>Why:</strong> Shows practical, production-grade agent workflow for paid marketing.</div>
+          <a class="link" href="https://x.com/tobiadonadon_/status/2116291073886818736" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Claude Code experimental agent teams: lead + parallel frontend/backend/test agents.</h3>
+          
+          <div class="post-body">Anthropic just revealed an experimental mode for Claude Code that completely breaks the traditional development process. Let one neural network manage other agents and deploy an entire IT team right inside your terminal.</div>
+          
+          <div class="author"><strong>Hoodie</strong> <span class="handle">@@HoodieFade_ · 211.3K followers · 19h ago</span></div>
+          <div class="engage">❤ 113 · 🔁 16 · 💬 16</div>
+          <div class="why"><strong>Why:</strong> Multi-agent orchestration inside terminal with direct inter-agent messaging.</div>
+          <a class="link" href="https://x.com/HoodieFade_/status/2116184025400250759" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Claude Code now supports async agent workflows with task handles and approvals.</h3>
+          
+          <div class="post-body">How to use it: 1. Update Claude Code 2. Prompt with a multi-step goal that needs external tools 3. Agent returns task handles, continues other work 4. Approve elicitations when prompted. This is the shift from chat to real agent workflows.</div>
+          
+          <div class="author"><strong>Ted 3unty</strong> <span class="handle">@@Ted3unty · 148.5K followers · 19h ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Moves from chat to persistent, tool-using agent loops.</div>
+          <a class="link" href="https://x.com/Ted3unty/status/2116180078866382881" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" style="display:block;">
+          <div class="t">Google releases Gemini 4 Carbon</div>
+          <div class="s">Google DeepMind · 3d ago</div>
+          <div class="sum">New top model for cybersecurity and long-horizon agentic tasks; #1 on Intelligence Index.</div>
+        </a>
+        
+        <a class="news-card" href="https://huggingface.co/mistralai" style="display:block;">
+          <div class="t">Mistral releases Mistral Large 4 weights (Le Chonk)</div>
+          <div class="s">Mistral AI · 2d ago</div>
+          <div class="sum">Open weights for improved Large 4 model available on Hugging Face and via API.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #f59e0b;">
+        <span class="col-dot" style="background:#f59e0b;"></span>
+        <span class="col-name">Ecommerce & Amazon</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">AI agents just got real commerce rails while Amazon doubles down on keeping shoppers inside its moat. Shopify's native app and 222 updates give DTC operators fresh weapons for Q4.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Free Claude skill auto-manages Meta ads, cuts CPL 42%.</h3>
+          
+          <div class="post-body">i built a skill that manages your meta ads for you it runs inside claude code and it's completely free 2 times per day it studies your ads performance and sends you a report with options this skill is better than any agency you could get…</div>
+          
+          <div class="author"><strong>Tobi</strong> <span class="handle">@@tobiadonadon_ · 12h ago</span></div>
+          <div class="engage">❤ 971 · 🔁 76 · 💬 758</div>
+          <div class="why"><strong>Why:</strong> Zero-cost AI replaces agencies for small DTC brands.</div>
+          <a class="link" href="https://x.com/tobiadonadon_/status/2116291073886818736" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">OpenCommerce: one API for 5k stores + agentic checkout.</h3>
+          
+          <div class="post-body">today we are announcing openrouter for commerce: a single endpoint that integrates 5k stores, including Doordash, Amazon and most shopify stores, with payments using Agentcard</div>
+          
+          <div class="author"><strong>mrs. robot</strong> <span class="handle">@@keyserfaty · 17h ago</span></div>
+          <div class="engage">❤ 1.2K · 🔁 107 · 💬 213</div>
+          <div class="why"><strong>Why:</strong> Enables reliable AI shopping agents across platforms.</div>
+          <a class="link" href="https://x.com/keyserfaty/status/2116205805704020056" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Shopify ships native mobile app rebuild, 2x faster launch.</h3>
+          
+          <div class="post-body">We’ve rebuilt the @Shopify mobile app from the ground up in native for iOS and Android. The new experience brings a fresh design, smoother interactions, and Liquid Glass on iOS. It also launches faster on both platforms, with Android launch time cut by more than half.</div>
+          
+          <div class="author"><strong>Mustafa Ali</strong> <span class="handle">@@mustafa01ali · 20h ago</span></div>
+          <div class="engage">❤ 573 · 🔁 41 · 💬 22</div>
+          <div class="why"><strong>Why:</strong> Merchants get pro-grade mobile ops for first time.</div>
+          <a class="link" href="https://x.com/mustafa01ali/status/2116157935126769862" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">222 Fall '26 updates; 10 must-act items for DTC brands.</h3>
+          
+          <div class="post-body">Shopify says its Fall '26 Edition has '150+ updates.' I counted 222. These are the 10 I would act on first if you run a Shopify DTC brand.</div>
+          
+          <div class="author"><strong>Sabir Semerkant</strong> <span class="handle">@@SabirS · 17h ago</span></div>
+          <div class="engage">❤ 5 · 🔁 0 · 💬 11</div>
+          <div class="why"><strong>Why:</strong> Actionable list of new Shopify features to implement now.</div>
+          <a class="link" href="https://x.com/SabirS/status/2116205993419841892" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Ex-Amazon: growth = Marketing system + Fulfillment system.</h3>
+          
+          <div class="post-body">After managing $218M+ in Amazon revenue, the growth formula has become crystal clear. There are two core systems working together: Marketing + Fulfillment.</div>
+          
+          <div class="author"><strong>George Schwartz</strong> <span class="handle">@@George_AMZN · 14h ago</span></div>
+          <div class="engage">❤ 1 · 🔁 0 · 💬 1</div>
+          <div class="why"><strong>Why:</strong> Simple framework explains why most Amazon accounts stall.</div>
+          <a class="link" href="https://x.com/George_AMZN/status/2116258861136900125" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.digitalcommerce360.com/article/amazon-sales/" style="display:block;">
+          <div class="t">Amazon Q3 sales rise 12% to $201.9B; Alexa for Shopping adds 100+ features</div>
+          <div class="s">Digital Commerce 360 · 1d ago</div>
+          <div class="sum">AWS up 39%, ads up 11%; 400M+ used Alexa Shopping last year.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.emarketer.com/content/amazon-expands-shop-direct-google-ai-reshape-product-discovery" style="display:block;">
+          <div class="t">Amazon expands Shop Direct to 250M listings to block third-party AI agents</div>
+          <div class="s">eMarketer / The Information · 3d ago</div>
+          <div class="sum">Shop Direct now 2.5x larger; keeps shoppers inside Amazon ecosystem.</div>
+        </a>
+        
+        <a class="news-card" href="https://acadia.io/retail-roundup-october-2026-unboxed-and-accelerate-announcements" style="display:block;">
+          <div class="t">Amazon Accelerate & unBoxed: Review Requests, multichannel Seller Central, AI bidding</div>
+          <div class="s">Acadia · 2d ago</div>
+          <div class="sum">Compliant paid reviews, unified Shopify/eBay/TikTok hub, new ad tools.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #a78bfa;">
+        <span class="col-dot" style="background:#a78bfa;"></span>
+        <span class="col-name">Business & World</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">BCI startups are shipping; ex-regulators are now building the tools that will police them. Founders: the bar for 'traction' just got real.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">YC-backed startup raises $1.3M for silent speech-to-text glasses.</h3>
+          
+          <div class="post-body">We’ve raised $1.3M from YC & Afore Capital so you never have to type or speak again. ... Pre-orders are now live.</div>
+          
+          <div class="author"><strong>Aarush Yadav</strong> <span class="handle">@@AarushYadav47 · 18h ago</span></div>
+          <div class="engage">❤ 19.1K · 🔁 2.1K · 💬 1.8K</div>
+          <div class="why"><strong>Why:</strong> Non-invasive BCI tech hits consumer pre-order stage.</div>
+          <a class="link" href="https://x.com/AarushYadav47/status/2116198463847408066" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">YC F26 founder launches non-invasive programmable BCI startup.</h3>
+          
+          <div class="post-body">Today we’re launching @dydema (YC F26). We’re building personal, programmable brain-computer interfaces: you pick a thought and bind it to anything... No surgery required.</div>
+          
+          <div class="author"><strong>Julian Weaver</strong> <span class="handle">@@juliver · 16h ago</span></div>
+          <div class="engage">❤ 3.0K · 🔁 81 · 💬 66</div>
+          <div class="why"><strong>Why:</strong> Thought-to-action interfaces move from lab to product.</div>
+          <a class="link" href="https://x.com/juliver/status/2116219622550904967" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Founder shares delegation test: what breaks when you're gone?</h3>
+          
+          <div class="post-body">Here's a test. Take a week off. Don't tell anyone how to reach you. See what breaks. ... The business should run on your judgment, not your presence.</div>
+          
+          <div class="author"><strong>Parker McCumber</strong> <span class="handle">@@ParkerMcCumber · 7h ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 1</div>
+          <div class="why"><strong>Why:</strong> Practical scaling lesson for solo-to-small-team founders.</div>
+          <a class="link" href="https://x.com/ParkerMcCumber/status/2116357117737136362" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Solo builder sets 18 Nov deadline for first paid AI-product sale.</h3>
+          
+          <div class="post-body">I run 4 small products as a solo builder, with AI agents doing most of the grunt work... Revenue so far: $0. ... Target is a first paid order by 18 Nov.</div>
+          
+          <div class="author"><strong>Paras_</strong> <span class="handle">@@paras_vyas_ · 7h ago</span></div>
+          <div class="engage">❤ 1 · 🔁 0 · 💬 1</div>
+          <div class="why"><strong>Why:</strong> Transparent bootstrapped experiment with AI leverage.</div>
+          <a class="link" href="https://x.com/paras_vyas_/status/2116363278167527445" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">Founder questions realism of $1B ARR in 24 months for hardware startup.</h3>
+          
+          <div class="post-body">The $1b ARR in 24 months is where I get stuck. That is about $41m of new ARR every single month... What is the first $10m supposed to come from?</div>
+          
+          <div class="author"><strong>Sagiv Ofek</strong> <span class="handle">@@sagivo · 7h ago</span></div>
+          <div class="engage">❤ 1 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Skeptical take on aggressive hardware growth projections.</div>
+          <a class="link" href="https://x.com/sagivo/status/2116360422102290803" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.reuters.com/legal/government/ex-doj-antitrust-chiefs-launch-ai-startup-plaintiffs-2026-10-28/" style="display:block;">
+          <div class="t">Ex-DOJ antitrust chiefs launch AI startup for plaintiffs</div>
+          <div class="s">Reuters · 2d ago</div>
+          <div class="sum">Former DOJ antitrust leaders start FluxCap AI tool for plaintiff lawyers.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.wsgr.com/en/insights/ftc-reaches-settlement-in-publiciss-dollar22-billion-liveramp-acquisition.html" style="display:block;">
+          <div class="t">FTC Reaches Settlement in Publicis’s $2.2 Billion LiveRamp Acquisition</div>
+          <div class="s">Wilson Sonsini · 4d ago</div>
+          <div class="sum">FTC approves deal with conditions protecting data-pipeline neutrality.</div>
+        </a>
+        
+        <a class="news-card" href="https://news.crunchbase.com/startups/personal-exposure-securities-fraud-joonko-jeziorski-founder-shield/" style="display:block;">
+          <div class="t">When Traction Becomes Personal Exposure: What The Joonko Guilty Plea Means For Founders</div>
+          <div class="s">Crunchbase News · 4d ago</div>
+          <div class="sum">AI startup founder pleads guilty to securities fraud over fake traction.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    </tr>
+  </table>
+
+  <div class="footer">
+    Generated 2026-10-31T10:08:53.151522+00:00 · Powered by Claude Code Routines + Grok API · 40.8K tokens
+  </div>
+
+</div>
+</body>
+</html>
