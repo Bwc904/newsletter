@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="supported-color-schemes" content="dark only">
+<title>Daily Brief · 2026-11-09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#09090b; color:#e4e4e7; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(34,211,238,0.10),transparent),radial-gradient(ellipse 900px 600px at 90% 15%,rgba(245,158,11,0.08),transparent),radial-gradient(ellipse 800px 500px at 50% 100%,rgba(167,139,250,0.10),transparent); background-attachment:fixed; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 20px; }
+  .serif { font-family:'Instrument Serif','Iowan Old Style','Palatino',Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  .kicker { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:600; font-family:'Space Grotesk',sans-serif; }
+  .masthead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid #27272a; margin-bottom:22px; }
+  .masthead h1 { margin:0; font-size:46px; line-height:1; font-weight:400; letter-spacing:-0.02em; color:#fafafa; font-family:'Instrument Serif',Georgia,serif; }
+  .masthead h1 em { font-style:italic; color:#e4e4e7; }
+  .masthead .date { font-size:13px; color:#a1a1aa; }
+  .tldr { position:relative; background:rgba(24,24,27,0.55); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 20px; margin-bottom:28px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.35); overflow:hidden; }
+  .tldr::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(245,158,11,0.04) 45%,rgba(167,139,250,0.08)); pointer-events:none; }
+  .tldr > * { position:relative; }
+  .tldr .tldr-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:700; margin-bottom:10px; display:block; }
+  .tldr ul { margin:0; padding:0; list-style:none; }
+  .tldr li { padding:8px 0; border-bottom:1px solid #27272a; display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#e4e4e7; line-height:1.45; }
+  .tldr li:last-child { border-bottom:none; }
+  .tldr .t-dot { width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .tldr .t-col { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-right:8px; }
+  .hero { background:rgba(24,24,27,0.5); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:32px; margin-bottom:32px; position:relative; overflow:hidden; backdrop-filter:blur(24px) saturate(160%); -webkit-backdrop-filter:blur(24px) saturate(160%); box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px rgba(0,0,0,0.45); }
+  .hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22d3ee,#f59e0b,#a78bfa); z-index:2; }
+  .hero::after { content:''; position:absolute; inset:-40%; background:radial-gradient(circle at 20% 10%,rgba(34,211,238,0.18),transparent 45%),radial-gradient(circle at 85% 20%,rgba(245,158,11,0.14),transparent 40%),radial-gradient(circle at 60% 100%,rgba(167,139,250,0.16),transparent 45%); pointer-events:none; filter:blur(20px); z-index:0; }
+  .hero > * { position:relative; z-index:1; }
+  .hero .tag { display:inline-block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:999px; background:#27272a; color:#fafafa; margin-bottom:14px; }
+  .hero h2 { margin:0 0 12px 0; font-size:34px; font-weight:400; line-height:1.15; color:#fafafa; letter-spacing:-0.015em; font-family:'Instrument Serif',Georgia,serif; }
+  .hero .meta { font-size:13px; color:#a1a1aa; margin-bottom:16px; }
+  .hero .body { font-size:15px; line-height:1.6; color:#d4d4d8; margin-bottom:20px; }
+  .hero .cta { display:inline-block; padding:10px 20px; background:#fafafa; color:#09090b !important; font-weight:600; font-size:13px; border-radius:8px; }
+  .cols { display:table; width:100%; border-spacing:16px 0; margin-left:-16px; }
+  .col { display:table-cell; width:33.3%; vertical-align:top; }
+  @media only screen and (max-width:700px) { .cols { display:block; margin-left:0; } .col { display:block; width:100%; padding-bottom:16px; } .masthead h1 { font-size:26px; } .hero h2 { font-size:22px; } }
+  .col-head { display:flex; align-items:center; gap:10px; padding:14px 16px; background:#18181b; border:1px solid #27272a; border-radius:12px; margin-bottom:12px; }
+  .col-dot { width:8px; height:8px; border-radius:50%; }
+  .col-name { font-size:14px; font-weight:700; color:#fafafa; letter-spacing:-0.01em; }
+  .col-body { background:transparent; border:none; padding:10px 0 0 0; }
+  .card { padding:18px 18px 16px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; }
+  .card:last-child { margin-bottom:0; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .sig { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; background:#27272a; color:#fafafa; letter-spacing:0.04em; white-space:nowrap; text-transform:uppercase; }
+  .card .headline { margin:0 0 8px 0; font-size:15px; line-height:1.35; font-weight:700; color:#fafafa; letter-spacing:-0.01em; font-family:'Space Grotesk',sans-serif; }
+  .card .post-body { margin:0 0 10px 0; font-size:13px; line-height:1.5; color:#a1a1aa; border-left:2px solid #27272a; padding-left:10px; }
+  .card .author { font-size:12px; color:#a1a1aa; margin-bottom:8px; }
+  .card .author strong { color:#fafafa; font-weight:600; }
+  .card .author .handle { color:#71717a; }
+  .card .engage { display:flex; align-items:center; gap:10px; font-size:11.5px; color:#a1a1aa; }
+  .card .why { margin-top:10px; padding:10px 12px; background:#09090b; border-left:3px solid currentColor; font-size:12.5px; color:#d4d4d8; line-height:1.55; border-radius:4px; }
+  .card .why strong { color:#fafafa; }
+  .card a.link { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+  .news-card { padding:14px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; display:block; }
+  .news-card:last-child { margin-bottom:0; }
+  .news-card .t { font-size:14px; font-weight:700; color:#fafafa; line-height:1.35; margin-bottom:4px; letter-spacing:-0.005em; font-family:'Space Grotesk',sans-serif; }
+  .news-card .s { font-size:11px; color:#71717a; }
+  .news-card .sum { font-size:12.5px; color:#a1a1aa; margin-top:6px; line-height:1.5; }
+  .section-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#71717a; font-weight:700; padding:14px 18px 6px 18px; }
+  .commentary { font-size:13px; color:#d4d4d8; font-style:italic; padding:14px 18px; line-height:1.55; border-bottom:1px solid #1f1f22; background:#0c0c0e; }
+  .footer { margin-top:36px; padding-top:20px; border-top:1px solid #27272a; text-align:center; font-size:11px; color:#52525b; }
+  .footer a { color:#71717a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>The <em>morning</em> edition</h1>
+    </div>
+    <div class="date">2026-11-09</div>
+  </div>
+
+  
+  <div class="tldr">
+    <span class="tldr-label">Today in 30 seconds</span>
+    <ul>
+      
+      <li>
+        <span class="t-dot" style="background:#22d3ee;"></span>
+        <div><span class="t-col" style="color:#22d3ee;">AI</span>Laid-off geophysicist built and open-sourced ai-job-search agent on Claude Code; 70k GitHub stars.</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#f59e0b;"></span>
+        <div><span class="t-col" style="color:#f59e0b;">Ecommerce & Amazon</span>Free 36-page ecom playbook: product research, page checklist, ad tests, Q4 calendar.</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#a78bfa;"></span>
+        <div><span class="t-col" style="color:#a78bfa;">Business & World</span>YC F26 open-source AI security tool finds 30+ kernel 0-days; backed by YC.</div>
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  <div class="hero">
+    <span class="tag" style="background:#22d3ee;color:#09090b;">⭐ Top story · AI</span>
+    
+      <h2>Meta open-sources 8-year internal UI system Astryx with 150+ components designed for AI agents.</h2>
+      <div class="meta"><strong style="color:#fafafa;">awe0</strong> <span style="color:#71717a;">@@awe0_io</span> · 1d ago · ❤ 3.9K · 🔁 410 · 💬 116</div>
+      <div class="body">Meta 这次真把家底掏出来了。内部打磨了整整 8 年、支撑超过 13,000 个应用的设计系统，直接开源了，名字叫 Astryx。150 多个现成 UI 组件... AI Agent 都考虑进去了。</div>
+      <div class="body" style="color:#a1a1aa;"><strong style="color:#fafafa;">Why it matters:</strong> Gives builders and agents a production-grade design system instead of starting from scratch.</div>
+      <a class="cta" href="https://x.com/awe0_io/status/2119354093458395284">Open on X →</a>
+    
+  </div>
+  
+
+  <table class="cols" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #22d3ee;">
+        <span class="col-dot" style="background:#22d3ee;"></span>
+        <span class="col-name">AI</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Meta drops an 8-year design system for agents while builders quietly ship job-hunting and second-brain agents on Claude Code; the real frontier is turning yesterday’s internal tools into today’s open agent primitives.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">YC CEO Garry Tan open-sourced gbrain; thread lists 8 lesser-known second-brain repos for agents.</h3>
+          
+          <div class="post-body">This is f*cking insane, the CEO of Y Combinator open-sourced his own second brain... 8 second brain repos you haven’t seen yet.</div>
+          
+          <div class="author"><strong>Ryven</strong> <span class="handle">@@imryven · 19h ago</span></div>
+          <div class="engage">❤ 1.1K · 🔁 136 · 💬 44</div>
+          <div class="why"><strong>Why:</strong> Shows how frontier builders structure persistent memory and agent workflows in plain markdown.</div>
+          <a class="link" href="https://x.com/imryven/status/2119433356584604119" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Laid-off geophysicist built and open-sourced ai-job-search agent on Claude Code; 70k GitHub stars.</h3>
+          
+          <div class="post-body">회사에서 잘리면 나는 무조건 이거부터 포크함... ai-job-search... Claude Code 위에서 돌아가는 구직 도우미임.</div>
+          
+          <div class="author"><strong>도파민(Dopamine)</strong> <span class="handle">@@dopamine_crypto · 1d ago</span></div>
+          <div class="engage">❤ 3.1K · 🔁 530 · 💬 14</div>
+          <div class="why"><strong>Why:</strong> Real-world example of shipping a production agent that turns job hunting into an automated workflow.</div>
+          <a class="link" href="https://x.com/dopamine_crypto/status/2119346689240862861" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Prompt drops a full multi-agent research crew with workflows ready to paste into Claude Opus.</h3>
+          
+          <div class="post-body">Claude Opus is fucking insane. Paste this into Claude and it'll spin up your first complete research crew of AI agents...</div>
+          
+          <div class="author"><strong>Mr. Systems</strong> <span class="handle">@@AISystems_hq · 1d ago</span></div>
+          <div class="engage">❤ 11 · 🔁 1 · 💬 4</div>
+          <div class="why"><strong>Why:</strong> Practical template for instantly bootstrapping specialized agent teams without custom scaffolding.</div>
+          <a class="link" href="https://x.com/AISystems_hq/status/2119356254565044532" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">15 native Claude Code commands for goal-setting, parallel agents, memory, branching, and shipping.</h3>
+          
+          <div class="post-body">I stopped doing manual work in Claude Code after these 15 commands... plan → parallel agents → ship.</div>
+          
+          <div class="author"><strong>0x_stat1x</strong> <span class="handle">@@0x_stat1x · 18h ago</span></div>
+          <div class="engage">❤ 2 · 🔁 0 · 💬 1</div>
+          <div class="why"><strong>Why:</strong> Concise cheat-sheet of official commands that turn Claude Code into a high-throughput agent OS.</div>
+          <a class="link" href="https://x.com/0x_stat1x/status/2119448222519132411" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://thursdai.news/releases/2026-11" style="display:block;">
+          <div class="t">SWE-2 Flash and GPT-6 Cyber debut this week</div>
+          <div class="s">ThursdAI / BenchLeader · 4d ago</div>
+          <div class="sum">Cognition ships fast SWE-2 Flash; OpenAI releases GPT-6 Cyber for approved security users.</div>
+        </a>
+        
+        <a class="news-card" href="https://thursdai.news/topics/frontier-models" style="display:block;">
+          <div class="t">Kimi K3.1 Pro open weights released</div>
+          <div class="s">Moonshot via ThursdAI · 4d ago</div>
+          <div class="sum">2.8T MoE (104B active) with 1M context and native vision; near Claude Opus 5.5 on some benches.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.nikkei.com/article/DGXZQOUC067MH0W6A101C2000000/" style="display:block;">
+          <div class="t">Sakana AI prepares IPO; largest domestic AI startup in Japan</div>
+          <div class="s">Nikkei · 2h ago</div>
+          <div class="sum">Generative-AI pure-play Sakana AI files for listing; first such domestic listing attempt.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #f59e0b;">
+        <span class="col-dot" style="background:#f59e0b;"></span>
+        <span class="col-name">Ecommerce & Amazon</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Hidden gems rule today: free playbooks and founder case studies beat the boycott noise. Watch Shop Direct rollout and Meta pixel tweaks ahead of BFCM.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Free 36-page ecom playbook: product research, page checklist, ad tests, Q4 calendar.</h3>
+          
+          <div class="post-body">90,000 stores were built with this and you get it for a comment. $400M+ tracked... product research filters, 6-point page checklist, $50 test, Q4 calendar, bundle tactics...</div>
+          
+          <div class="author"><strong>Alex Minecan</strong> <span class="handle">@@alexpagepilot · 16h ago</span></div>
+          <div class="engage">❤ 14 · 🔁 3 · 💬 22</div>
+          <div class="why"><strong>Why:</strong> Actionable playbook from operator with $400M tracked revenue; high engagement-to-follower ratio.</div>
+          <a class="link" href="https://x.com/alexpagepilot/status/2119478061297172904" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Cracked marketers in high demand; learn Meta Ads, programmatic content, analytics for US clients.</h3>
+          
+          <div class="post-body">Seminggu ini gue hiatus dari X karena lagi banyak ngerjain project marketing klien... demand cracked marketers jauh lebih tinggi... Meta Ads + MCP, programmatic content, data analytics, marketing end-to-end.</div>
+          
+          <div class="author"><strong>Hanif | AI For Productivity</strong> <span class="handle">@@hanifproduktif · 1d ago</span></div>
+          <div class="engage">❤ 4.7K · 🔁 556 · 💬 49</div>
+          <div class="why"><strong>Why:</strong> Practical career playbook for DTC operators scaling with AI-era marketing skills.</div>
+          <a class="link" href="https://x.com/hanifproduktif/status/2119271175025295736" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">Call to boycott Shopify over sponsorship of controversial speaker.</h3>
+          
+          <div class="post-body">BOYCOTT Shopify! Hey @Shopify a few days ago you sponsored Scott Galloway who called for the execution of Elon Musk. Do you support this kind of violent rhetoric?</div>
+          
+          <div class="author"><strong>Brian Atlas</strong> <span class="handle">@@BrianAtlas · 20h ago</span></div>
+          <div class="engage">❤ 853 · 🔁 124 · 💬 28</div>
+          <div class="why"><strong>Why:</strong> Potential brand risk and ad platform perception issue for Shopify merchants.</div>
+          <a class="link" href="https://x.com/BrianAtlas/status/2119428475333566541" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Founder rebuilt content system: 600→4,200 followers, 18→310 likes, inbound leads.</h3>
+          
+          <div class="post-body">Founder content engine broken... 8 months posting, 18 likes... rebuilt hooks... 90 days: 4,200 followers, 310 likes/post, 12 warm leads.</div>
+          
+          <div class="author"><strong>Aisha Mehta</strong> <span class="handle">@@AishaMehtabn · 1h ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 1</div>
+          <div class="why"><strong>Why:</strong> Small-account case study on engineered content driving measurable DTC pipeline.</div>
+          <a class="link" href="https://x.com/AishaMehtabn/status/2119712848502784040" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Content system turns belief into inbound: 20→350 visits/day, 3-5 deals/month.</h3>
+          
+          <div class="post-body">Believing your product is exceptional isn't delusional... mapped ICP, engineered hooks... 30 days: 20→350 profile visits/day, 3-5 qualified deals/month.</div>
+          
+          <div class="author"><strong>Anita Nair</strong> <span class="handle">@@anitanair_ · 15h ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Repeatable framework for small brands building authority and pipeline on X.</div>
+          <a class="link" href="https://x.com/anitanair_/status/2119504264233918663" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.retail-insight-network.com/news/amazon-shop-direct-merchant-workspace/" style="display:block;">
+          <div class="t">Amazon Shop Direct Merchant Workspace launches for third-party retailers</div>
+          <div class="s">Retail Insight Network / Chain Store Age · 4d ago</div>
+          <div class="sum">Self-service portal lets merchants feed products to Amazon/Alexa; no fees, inventory stays with seller.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.valueaddedresource.net/week-in-review-11-8-26/" style="display:block;">
+          <div class="t">Amazon pricing policies class action certified for eBay/Walmart buyers</div>
+          <div class="s">Value Added Resource · 1d ago</div>
+          <div class="sum">Judge certifies class action alleging Amazon policies inflated prices on rival marketplaces.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.yourecomteam.co/blog" style="display:block;">
+          <div class="t">Meta Pixel 'Measure Conversions on Customer Devices' default change before BFCM</div>
+          <div class="s">Your eCom Team · 10h ago</div>
+          <div class="sum">New default may lift reported ROAS; Shopify/DTC advertisers must review before Nov 12.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #a78bfa;">
+        <span class="col-dot" style="background:#a78bfa;"></span>
+        <span class="col-name">Business & World</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Hiring heat and open-source security wins signal builder momentum; ex-regulators pivoting to AI legal tools shows antitrust talent chasing the next wave.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">16VC GP hiring across portfolio for engineering, product, growth roles in SF/NY/London/BLR/remote.</h3>
+          
+          <div class="post-body">i'm hiring. across 16vc portfolio companies and accelerator startups. roles across engineering & ai, product & design, growth & marketing... locations: san francisco · new york · london · bengaluru · remote. salary ranges... hiring starts immediately. join by january 2027.</div>
+          
+          <div class="author"><strong>Sridhar A</strong> <span class="handle">@@sridharfyi · 8h ago</span></div>
+          <div class="engage">❤ 959 · 🔁 30 · 💬 301</div>
+          <div class="why"><strong>Why:</strong> Signals active early-stage hiring amid AI boom; broad salary bands show talent market heating up.</div>
+          <a class="link" href="https://x.com/sridharfyi/status/2119608084985475298" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Solo founder shares path to $90k/mo ARR with 90%+ organic mobile app growth.</h3>
+          
+          <div class="post-body">Let's connect if you're building for mobile. I'll share how I built an app to $90k a month in 1 year. Solo-founder, over 90% organic.</div>
+          
+          <div class="author"><strong>Jake Silverstein</strong> <span class="handle">@@lazyjakee · 1d ago</span></div>
+          <div class="engage">❤ 572 · 🔁 8 · 💬 177</div>
+          <div class="why"><strong>Why:</strong> Rare public case study of bootstrapped mobile success; inspires non-VC paths.</div>
+          <a class="link" href="https://x.com/lazyjakee/status/2119229740947239204" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">YC F26 open-source AI security tool finds 30+ kernel 0-days; backed by YC.</h3>
+          
+          <div class="post-body">Introducing: 0 - the open-source AI security harness by @0securitylabs (YC F26). It found 30+ Linux kernel 0-days... Full-stack pentesting... Multi-model, Reverse engineering... Use it with your coding agent.</div>
+          
+          <div class="author"><strong>Doruk</strong> <span class="handle">@@Peak__Twilight · 17h ago</span></div>
+          <div class="engage">❤ 772 · 🔁 56 · 💬 50</div>
+          <div class="why"><strong>Why:</strong> Novel defensive AI tool from tiny team; potential to reshape open-source security workflows.</div>
+          <a class="link" href="https://x.com/Peak__Twilight/status/2119475616030630059" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Home-service founders workshop: lack of 90-day revenue targets biggest blocker to growth.</h3>
+          
+          <div class="post-body">New York, Oregon, Texas, Utah and Cali were all in the room today learning about building a business rather than just investing in land... Number one problem they all had? No clarity into what actually would move them towards their 12 month outcomes.</div>
+          
+          <div class="author"><strong>John Claborn</strong> <span class="handle">@@FrontierBDesign · 1d ago</span></div>
+          <div class="engage">❤ 8 · 🔁 0 · 💬 3</div>
+          <div class="why"><strong>Why:</strong> Ground-level operator insight; shows even funded founders struggle with basic operating systems.</div>
+          <a class="link" href="https://x.com/FrontierBDesign/status/2119224916365259005" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">Viral contrast: OpenAI's relaxed culture vs intense 996 startup ethos in leaked texts.</h3>
+          
+          <div class="post-body">the hardest, baddest motherfucker in the world: "we are a relaxed environment" some founder building a document editor: "we are intense, we don't smile, and we do 996"</div>
+          
+          <div class="author"><strong>august (foss/acc)</strong> <span class="handle">@@augustdeploying · 16h ago</span></div>
+          <div class="engage">❤ 1.5K · 🔁 39 · 💬 12</div>
+          <div class="why"><strong>Why:</strong> Highlights diverging founder cultures; talent may vote with feet on work intensity.</div>
+          <a class="link" href="https://x.com/augustdeploying/status/2119488717677297931" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.reuters.com/legal/government/ex-doj-antitrust-chiefs-launch-ai-startup-plaintiffs-2026-10-28/" style="display:block;">
+          <div class="t">Ex-DOJ Antitrust Chiefs Launch AI Legal Startup FluxCap</div>
+          <div class="s">Reuters · 11d ago</div>
+          <div class="sum">Kanter & Mekki raise $6.4M seed for AI platform aiding plaintiffs in antitrust litigation.</div>
+        </a>
+        
+        <a class="news-card" href="https://thenextweb.com/news/publicis-liveramp-ftc-consent-order-equal-access" style="display:block;">
+          <div class="t">FTC Clears Publicis $2.2B LiveRamp Deal with Rival Access Conditions</div>
+          <div class="s">The Next Web · 19d ago</div>
+          <div class="sum">FTC approves ad merger only if LiveRamp grants rivals equal data access for 5 years.</div>
+        </a>
+        
+        <a class="news-card" href="https://news.bloomberglaw.com/antitrust/former-doj-antitrust-enforcers-launch-ai-powered-legal-platform" style="display:block;">
+          <div class="t">Former DOJ Antitrust Enforcers Launch AI-Powered Legal Platform</div>
+          <div class="s">Bloomberg Law · 11d ago</div>
+          <div class="sum">FluxCap targets underserved plaintiffs' firms with end-to-end AI litigation tools.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    </tr>
+  </table>
+
+  <div class="footer">
+    Generated 2026-11-09T10:07:52.979375+00:00 · Powered by Claude Code Routines + Grok API · 40.3K tokens
+  </div>
+
+</div>
+</body>
+</html>
