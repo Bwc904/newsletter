@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark only">
+<meta name="supported-color-schemes" content="dark only">
+<title>Daily Brief · 2026-11-24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#09090b; color:#e4e4e7; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(34,211,238,0.10),transparent),radial-gradient(ellipse 900px 600px at 90% 15%,rgba(245,158,11,0.08),transparent),radial-gradient(ellipse 800px 500px at 50% 100%,rgba(167,139,250,0.10),transparent); background-attachment:fixed; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 20px; }
+  .serif { font-family:'Instrument Serif','Iowan Old Style','Palatino',Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  .kicker { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:600; font-family:'Space Grotesk',sans-serif; }
+  .masthead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid #27272a; margin-bottom:22px; }
+  .masthead h1 { margin:0; font-size:46px; line-height:1; font-weight:400; letter-spacing:-0.02em; color:#fafafa; font-family:'Instrument Serif',Georgia,serif; }
+  .masthead h1 em { font-style:italic; color:#e4e4e7; }
+  .masthead .date { font-size:13px; color:#a1a1aa; }
+  .tldr { position:relative; background:rgba(24,24,27,0.55); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px 20px; margin-bottom:28px; backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.35); overflow:hidden; }
+  .tldr::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(245,158,11,0.04) 45%,rgba(167,139,250,0.08)); pointer-events:none; }
+  .tldr > * { position:relative; }
+  .tldr .tldr-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#71717a; font-weight:700; margin-bottom:10px; display:block; }
+  .tldr ul { margin:0; padding:0; list-style:none; }
+  .tldr li { padding:8px 0; border-bottom:1px solid #27272a; display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#e4e4e7; line-height:1.45; }
+  .tldr li:last-child { border-bottom:none; }
+  .tldr .t-dot { width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .tldr .t-col { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-right:8px; }
+  .hero { background:rgba(24,24,27,0.5); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:32px; margin-bottom:32px; position:relative; overflow:hidden; backdrop-filter:blur(24px) saturate(160%); -webkit-backdrop-filter:blur(24px) saturate(160%); box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 60px rgba(0,0,0,0.45); }
+  .hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#22d3ee,#f59e0b,#a78bfa); z-index:2; }
+  .hero::after { content:''; position:absolute; inset:-40%; background:radial-gradient(circle at 20% 10%,rgba(34,211,238,0.18),transparent 45%),radial-gradient(circle at 85% 20%,rgba(245,158,11,0.14),transparent 40%),radial-gradient(circle at 60% 100%,rgba(167,139,250,0.16),transparent 45%); pointer-events:none; filter:blur(20px); z-index:0; }
+  .hero > * { position:relative; z-index:1; }
+  .hero .tag { display:inline-block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:999px; background:#27272a; color:#fafafa; margin-bottom:14px; }
+  .hero h2 { margin:0 0 12px 0; font-size:34px; font-weight:400; line-height:1.15; color:#fafafa; letter-spacing:-0.015em; font-family:'Instrument Serif',Georgia,serif; }
+  .hero .meta { font-size:13px; color:#a1a1aa; margin-bottom:16px; }
+  .hero .body { font-size:15px; line-height:1.6; color:#d4d4d8; margin-bottom:20px; }
+  .hero .cta { display:inline-block; padding:10px 20px; background:#fafafa; color:#09090b !important; font-weight:600; font-size:13px; border-radius:8px; }
+  .cols { display:table; width:100%; border-spacing:16px 0; margin-left:-16px; }
+  .col { display:table-cell; width:33.3%; vertical-align:top; }
+  @media only screen and (max-width:700px) { .cols { display:block; margin-left:0; } .col { display:block; width:100%; padding-bottom:16px; } .masthead h1 { font-size:26px; } .hero h2 { font-size:22px; } }
+  .col-head { display:flex; align-items:center; gap:10px; padding:14px 16px; background:#18181b; border:1px solid #27272a; border-radius:12px; margin-bottom:12px; }
+  .col-dot { width:8px; height:8px; border-radius:50%; }
+  .col-name { font-size:14px; font-weight:700; color:#fafafa; letter-spacing:-0.01em; }
+  .col-body { background:transparent; border:none; padding:10px 0 0 0; }
+  .card { padding:18px 18px 16px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; }
+  .card:last-child { margin-bottom:0; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .sig { font-size:10px; font-weight:700; padding:3px 9px; border-radius:999px; background:#27272a; color:#fafafa; letter-spacing:0.04em; white-space:nowrap; text-transform:uppercase; }
+  .card .headline { margin:0 0 8px 0; font-size:15px; line-height:1.35; font-weight:700; color:#fafafa; letter-spacing:-0.01em; font-family:'Space Grotesk',sans-serif; }
+  .card .post-body { margin:0 0 10px 0; font-size:13px; line-height:1.5; color:#a1a1aa; border-left:2px solid #27272a; padding-left:10px; }
+  .card .author { font-size:12px; color:#a1a1aa; margin-bottom:8px; }
+  .card .author strong { color:#fafafa; font-weight:600; }
+  .card .author .handle { color:#71717a; }
+  .card .engage { display:flex; align-items:center; gap:10px; font-size:11.5px; color:#a1a1aa; }
+  .card .why { margin-top:10px; padding:10px 12px; background:#09090b; border-left:3px solid currentColor; font-size:12.5px; color:#d4d4d8; line-height:1.55; border-radius:4px; }
+  .card .why strong { color:#fafafa; }
+  .card a.link { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+  .news-card { padding:14px 18px; background:#16161a; border:1px solid #27272a; border-radius:10px; margin-bottom:10px; display:block; }
+  .news-card:last-child { margin-bottom:0; }
+  .news-card .t { font-size:14px; font-weight:700; color:#fafafa; line-height:1.35; margin-bottom:4px; letter-spacing:-0.005em; font-family:'Space Grotesk',sans-serif; }
+  .news-card .s { font-size:11px; color:#71717a; }
+  .news-card .sum { font-size:12.5px; color:#a1a1aa; margin-top:6px; line-height:1.5; }
+  .section-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#71717a; font-weight:700; padding:14px 18px 6px 18px; }
+  .commentary { font-size:13px; color:#d4d4d8; font-style:italic; padding:14px 18px; line-height:1.55; border-bottom:1px solid #1f1f22; background:#0c0c0e; }
+  .footer { margin-top:36px; padding-top:20px; border-top:1px solid #27272a; text-align:center; font-size:11px; color:#52525b; }
+  .footer a { color:#71717a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>The <em>morning</em> edition</h1>
+    </div>
+    <div class="date">2026-11-24</div>
+  </div>
+
+  
+  <div class="tldr">
+    <span class="tldr-label">Today in 30 seconds</span>
+    <ul>
+      
+      <li>
+        <span class="t-dot" style="background:#22d3ee;"></span>
+        <div><span class="t-col" style="color:#22d3ee;">AI</span>Google DeepMind: Agents + formal verification speed quantum algorithms</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#f59e0b;"></span>
+        <div><span class="t-col" style="color:#f59e0b;">Ecommerce & Amazon</span>Walmart opens door to AI shopping agents; Amazon blocks them.</div>
+      </li>
+      
+      <li>
+        <span class="t-dot" style="background:#a78bfa;"></span>
+        <div><span class="t-col" style="color:#a78bfa;">Business & World</span>Altman predicts 10-person $1B AI companies soon.</div>
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  <div class="hero">
+    <span class="tag" style="background:#22d3ee;color:#09090b;">⭐ Top story · AI</span>
+    
+      <h2>Claim: Claude proves VP≠VNP variant of P vs NP in Lean.</h2>
+      <div class="meta"><strong style="color:#fafafa;">Polymarket Japan</strong> <span style="color:#71717a;">@@polymarketjapan</span> · 50.0K followers · 7h ago · ❤ 1.3K · 🔁 319 · 💬 18</div>
+      <div class="body">【速報】Claude、47年来の数学の難問「ヴァリアント予想」を証明か・Anthropicが「P対NP問題」の代数版にあたる「VP≠VNP」を、すべての体で証明したと主張</div>
+      <div class="body" style="color:#a1a1aa;"><strong style="color:#fafafa;">Why it matters:</strong> Potential milestone in AI solving long-standing math problems.</div>
+      <a class="cta" href="https://x.com/polymarketjapan/status/2125062818148049305">Open on X →</a>
+    
+  </div>
+  
+
+  <table class="cols" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #22d3ee;">
+        <span class="col-dot" style="background:#22d3ee;"></span>
+        <span class="col-name">AI</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Math proofs, loop transformers, and agent harnesses dominated the last 24h—AI is moving from chat to verifiable reasoning and production workflows.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Anthropic study: org change drives AI value; worker resistance high.</h3>
+          
+          <div class="post-body">Two big points from this new Anthropic paper: 1) The most AI value comes from changing the organization 2) There is wide worker resistance to AI adoption (partially due to point 1)</div>
+          
+          <div class="author"><strong>Ethan Mollick</strong> <span class="handle">@@emollick · 500.0K followers · 4h ago</span></div>
+          <div class="engage">❤ 713 · 🔁 83 · 💬 125</div>
+          <div class="why"><strong>Why:</strong> Highlights adoption barriers beyond tech—key for enterprise rollout.</div>
+          <a class="link" href="https://x.com/emollick/status/2125098309928812898" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Single prompt builds 24/7 Claude agent team with no code.</h3>
+          
+          <div class="post-body">THIS PROMPT GETS CLAUDE TO SET UP YOUR OWN 24/7 TEAM OF AI AGENTS IN 1 DAY WITHOUT YOU KNOWING HOW TO CODE</div>
+          
+          <div class="author"><strong>darkzodchi</strong> <span class="handle">@@zodchiii · 5.0K followers · 13h ago</span></div>
+          <div class="engage">❤ 31 · 🔁 0 · 💬 2</div>
+          <div class="why"><strong>Why:</strong> Democratizes multi-agent workflows for non-coders.</div>
+          <a class="link" href="https://x.com/zodchiii/status/2124961083215736991" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Deep dive on Claude Code harness: CLAUDE.md, subagents, hooks.</h3>
+          
+          <div class="post-body">two anthropic engineers walked through claude code features for 24 minutes and it pulled 1M views</div>
+          
+          <div class="author"><strong>Valentin</strong> <span class="handle">@@martynov014 · 8.0K followers · 16h ago</span></div>
+          <div class="engage">❤ 64 · 🔁 7 · 💬 12</div>
+          <div class="why"><strong>Why:</strong> Reveals production-grade agent scaffolding techniques.</div>
+          <a class="link" href="https://x.com/martynov014/status/2124915424685105580" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#22d3ee;">
+          <div class="row">
+            <span class="sig" style="background:#22d3ee22;color:#22d3ee;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Claude Code Mode: JS scripts cut context use 98% in agents.</h3>
+          
+          <div class="post-body">Stop burning 150,000 tokens watching your coding agent call one tool at a time. Anthropic experimental Code Mode inside Claude Code flips the whole loop upside down.</div>
+          
+          <div class="author"><strong>Kisalay</strong> <span class="handle">@@Kisalay_ · 3.0K followers · 2h ago</span></div>
+          <div class="engage">❤ 3 · 🔁 0 · 💬 7</div>
+          <div class="why"><strong>Why:</strong> Massive efficiency gain for long-horizon coding agents.</div>
+          <a class="link" href="https://x.com/Kisalay_/status/2125129793683255504" style="color:#22d3ee;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://theaiengineering.com/releases/2026/11" style="display:block;">
+          <div class="t">Z.ai releases GLM-5.4, 750B Loop Transformer</div>
+          <div class="s">The AI Engineering · 1d ago</div>
+          <div class="sum">First Loop Transformer model; targets coding across video, games, 3D.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.dailyaithread.com/en/topics/models" style="display:block;">
+          <div class="t">Google DeepMind: Agents + formal verification speed quantum algorithms</div>
+          <div class="s">Daily AI Thread · 10h ago</div>
+          <div class="sum">Gemini 4 agents cut quantum sim cost 11.8x for fusion research.</div>
+        </a>
+        
+        <a class="news-card" href="https://zerohour.day/ai" style="display:block;">
+          <div class="t">Meta launches Muse personal AI agent in UK</div>
+          <div class="s">ZeroHour · 45m ago</div>
+          <div class="sum">Muse Spark runs each user in isolated cloud instance.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #f59e0b;">
+        <span class="col-dot" style="background:#f59e0b;"></span>
+        <span class="col-name">Ecommerce & Amazon</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">AI agents just went from experiment to table stakes—Walmart embraces, Amazon blocks, and Shopify is already running on agent factories.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">Open-source AI toolkit turns 38-page Shopee SOP into 7 agents for listing, ads, reviews.</h3>
+          
+          <div class="post-body">卧槽！做跨境电商的真该看看这个！国内大佬把38页的跨境运营内部手册，直接拆成了7个AI员工！项目叫 AI Cross Border Ecommerce Agent Toolkit，GitHub已经拿下约1.2K Stars。</div>
+          
+          <div class="author"><strong>MX狗哥</strong> <span class="handle">@@RachidSettas · 1d ago</span></div>
+          <div class="engage">❤ 717 · 🔁 134 · 💬 22</div>
+          <div class="why"><strong>Why:</strong> Gives small sellers an instant AI ops team for Amazon, TikTok Shop, Shopify.</div>
+          <a class="link" href="https://x.com/RachidSettas/status/2124709631100363013" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Walmart opens door to AI shopping agents; Amazon blocks them.</h3>
+          
+          <div class="post-body">Walmart is determined not to make the same mistake with agentic commerce that it did with ecommerce. While Amazon is blocking agents, Walmart is embracing them.</div>
+          
+          <div class="author"><strong>Ethan Mollick</strong> <span class="handle">@@emollick · 18h ago</span></div>
+          <div class="engage">❤ 921 · 🔁 53 · 💬 184</div>
+          <div class="why"><strong>Why:</strong> Signals shift in platform stance on autonomous checkout.</div>
+          <a class="link" href="https://x.com/emollick/status/2124895744775667767" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Tobi: AI turns devs into verification engineers; Shopify runs on agent factories.</h3>
+          
+          <div class="post-body">Shopify CEO 出演のポッドキャストがかなり良かったのでメモ。エディタにコードを手打ちする従来のプログラマー職やWeb 2.0の時代は、2026年をもって実質的に終了。</div>
+          
+          <div class="author"><strong>iwashi / Yoshimasa Iwase</strong> <span class="handle">@@iwashi86 · 7h ago</span></div>
+          <div class="engage">❤ 591 · 🔁 86 · 💬 6</div>
+          <div class="why"><strong>Why:</strong> Blueprint for how DTC brands should staff and build in 2027.</div>
+          <a class="link" href="https://x.com/iwashi86/status/2125061867399680139" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">Tobi: treat AI like Hendrix treats guitar—master the instrument, not the task.</h3>
+          
+          <div class="post-body">Most people use AI to speed up the tasks they already do. Shopify CEO @tobi says the real skill is learning to play it: “I think AI is best thought of as an instrument.”</div>
+          
+          <div class="author"><strong>David Senra</strong> <span class="handle">@@davidsenra · 1d ago</span></div>
+          <div class="engage">❤ 508 · 🔁 41 · 💬 27</div>
+          <div class="why"><strong>Why:</strong> High-signal mindset shift for operators scaling with agents.</div>
+          <a class="link" href="https://x.com/davidsenra/status/2124705748781256725" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#f59e0b;">
+          <div class="row">
+            <span class="sig" style="background:#f59e0b22;color:#f59e0b;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">New discovery + proof-of-purchase layer for DTC brands bypassing Amazon.</h3>
+          
+          <div class="post-body">If you run an independent brand, you probably know the feeling of doing everything right and still being hard to find. We're building BIFY for brands in that spot.</div>
+          
+          <div class="author"><strong>BIFY</strong> <span class="handle">@@BIFYOfficial · 1d ago</span></div>
+          <div class="engage">❤ 3 · 🔁 1 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Early signal of tools helping small brands own their customer data.</div>
+          <a class="link" href="https://x.com/BIFYOfficial/status/2124760117396533337" style="color:#f59e0b;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://www.retaildive.com/news/amazon-adds-alexa-ai-shopping-functions/873602/" style="display:block;">
+          <div class="t">Amazon adds 100+ Alexa for Shopping functions</div>
+          <div class="s">Retail Dive · 1d ago</div>
+          <div class="sum">Alexa now handles subscriptions, billing, registries; Amazon pushes voice commerce.</div>
+        </a>
+        
+        <a class="news-card" href="https://stackinfluence.com/blog/november-2026-ecommerce-news-and-updates-for-sellers" style="display:block;">
+          <div class="t">Amazon publishes 2027 FBA fees; +$0.19/unit average</div>
+          <div class="s">Stack Influence · 7d ago</div>
+          <div class="sum">Fuel surcharge stays; storage fees shift to single aged-inventory rate Feb 2027.</div>
+        </a>
+        
+        <a class="news-card" href="https://automationtoday.net/news/report-cpg-brands-moving-toward-ai-agents-to-manage-e-commerce-complexity/" style="display:block;">
+          <div class="t">CPG brands shifting budgets to AI agents for e-commerce ops</div>
+          <div class="s">Automation Today · 10h ago</div>
+          <div class="sum">80% of CPG leaders open to agentic retail for pricing, content, retail media.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    <td class="col">
+      <div class="col-head" style="border-top:2px solid #a78bfa;">
+        <span class="col-dot" style="background:#a78bfa;"></span>
+        <span class="col-name">Business & World</span>
+      </div>
+      <div class="col-body">
+
+        <div class="commentary">Altman’s 10-person unicorn vision collides with real antitrust friction on the biggest delivery deal yet.</div>
+
+        
+        <div class="section-label">From X</div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🔥 Trending</span>
+          </div>
+          <h3 class="headline">Altman predicts 10-person $1B AI companies soon.</h3>
+          
+          <div class="post-body">Sam Altman: 'If I were 22 right now, I would feel like the luckiest kid in history. We are going to see 10-person billion-dollar companies pretty soon'</div>
+          
+          <div class="author"><strong>Mohini Goyal</strong> <span class="handle">@@Mohiniuni · 80.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 986 · 🔁 174 · 💬 42</div>
+          <div class="why"><strong>Why:</strong> Signals shift to agent-driven lean startups.</div>
+          <a class="link" href="https://x.com/Mohiniuni/status/2124737209022480654" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Founder weighs bootstrap vs. raise at $1M ARR.</h3>
+          
+          <div class="post-body">Getting to $1M ARR fully self funded puts you in the strongest seat a founder can have. Do you stay bootstrapped from here, or is there a stage where outside capital buys speed you can’t get otherwise?</div>
+          
+          <div class="author"><strong>Chanmeet S. Narang</strong> <span class="handle">@@chanmeetnarang · 5.0K followers · 10h ago</span></div>
+          <div class="engage">❤ 3 · 🔁 0 · 💬 1</div>
+          <div class="why"><strong>Why:</strong> Practical capital strategy for self-funded startups.</div>
+          <a class="link" href="https://x.com/chanmeetnarang/status/2125017045540467053" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💎 Under the radar</span>
+          </div>
+          <h3 class="headline">Small account celebrates $1M ARR bootstrap milestone.</h3>
+          
+          <div class="post-body">bootstrapped to $1M ARR, huge. sent you a dm, it's waiting in message requests</div>
+          
+          <div class="author"><strong>Bairod</strong> <span class="handle">@@bairod_sk · 2.0K followers · 8h ago</span></div>
+          <div class="engage">❤ 0 · 🔁 0 · 💬 0</div>
+          <div class="why"><strong>Why:</strong> Real-world example of self-funded success.</div>
+          <a class="link" href="https://x.com/bairod_sk/status/2125033412985487652" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">🛠️ New / built</span>
+          </div>
+          <h3 class="headline">AI agents on-chain could hit $1B ARR in under a year.</h3>
+          
+          <div class="post-body">Zooming out on the $1B ARR trajectory highlights structural compression... Autonomous On-Chain AI Agents on $ICP (Sub-Year / Near-Vertical Curve)</div>
+          
+          <div class="author"><strong>CloudstrikeThunderbeing</strong> <span class="handle">@@jackbearsupply · 3.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 4 · 🔁 1 · 💬 3</div>
+          <div class="why"><strong>Why:</strong> Novel infrastructure thesis for ultra-lean scaling.</div>
+          <a class="link" href="https://x.com/jackbearsupply/status/2124654292565217398" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+        <div class="card" style="color:#a78bfa;">
+          <div class="row">
+            <span class="sig" style="background:#a78bfa22;color:#a78bfa;">💬 Discussion</span>
+          </div>
+          <h3 class="headline">50k signatures for UK animal testing regulation inquiry.</h3>
+          
+          <div class="post-body">Hi everyone we’ve reached over 50,000 signatures! We call on the Government to launch an independent public inquiry into the regulation of animal experimentation.</div>
+          
+          <div class="author"><strong>Peter Egan</strong> <span class="handle">@@PeterEgan6 · 120.0K followers · 1d ago</span></div>
+          <div class="engage">❤ 1.5K · 🔁 668 · 💬 70</div>
+          <div class="why"><strong>Why:</strong> Potential policy shift impacting biotech R&D costs.</div>
+          <a class="link" href="https://x.com/PeterEgan6/status/2124794421262582247" style="color:#a78bfa;">Read full post on X →</a>
+        </div>
+        
+        
+
+        
+        <div class="section-label">News</div>
+        
+        <a class="news-card" href="https://restaurantbusinessonline.com/technology/doj-set-review-doordash-instacart-deal-potential-antitrust-issues" style="display:block;">
+          <div class="t">DOJ to review DoorDash-Instacart $17B deal for antitrust</div>
+          <div class="s">Restaurant Business Online · 13h ago</div>
+          <div class="sum">DOJ leads antitrust scrutiny of major delivery merger.</div>
+        </a>
+        
+        <a class="news-card" href="https://techstartups.com/2026/11/23/startup-funding-news-today-november-23-2026-simplexity-robotics-acorda-agon-sanrise-thera-more/" style="display:block;">
+          <div class="t">Simplexity Robotics raises $100M pre-Series A at $1.6B valuation</div>
+          <div class="s">Tech Startups · 20h ago</div>
+          <div class="sum">Chinese robotics startup lands big pre-A round led by Ant Group.</div>
+        </a>
+        
+        <a class="news-card" href="https://www.politico.com/news/2026/11/21/california-bonta-antitrust-doordash-instacart-ai-01178358" style="display:block;">
+          <div class="t">California AG to review DoorDash-Instacart and Nvidia separately</div>
+          <div class="s">Politico · 2d ago</div>
+          <div class="sum">CA AG Bonta pursues independent antitrust and AI probes.</div>
+        </a>
+        
+        
+
+      </div>
+    </td>
+    
+    </tr>
+  </table>
+
+  <div class="footer">
+    Generated 2026-11-24T10:06:17.161111+00:00 · Powered by Claude Code Routines + Grok API · 38.7K tokens
+  </div>
+
+</div>
+</body>
+</html>
